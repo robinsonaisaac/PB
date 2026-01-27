@@ -6,9 +6,16 @@ __pycache__/
 .Python
 venv/
 ENV/
+*.egg-info/
 
 # Data files (large)
 all_pb_files_*/
+
+# Generated output
+output/
+
+# Test/build artifacts
+.pytest_cache/
 
 # OS
 .DS_Store
@@ -17,6 +24,6 @@ all_pb_files_*/
 # IDE
 .idea/
 .vscode/
+.cursor/
+.claude/
 *.code-workspace
-
-*.egg-info/

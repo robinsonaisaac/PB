@@ -36,7 +36,7 @@ pabutools = [
 scalable-pb = "scalable_proportional_pb.__main__:main"
 
 [project.urls]
-Repository = "https://github.com/robinsonaisaac/Scalable_Proportional_PB"
+Repository = "https://github.com/robinsonaisaac/PB"
 
 [tool.setuptools.packages.find]
 where = ["src"]
