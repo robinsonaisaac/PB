@@ -3,7 +3,7 @@
 Demo script for generating all paper visualizations.
 
 This script:
-1. Loads results from Scalable_Proportional_PB/results/
+1. Loads results from results/
 2. Generates sample data for trajectory plots
 3. Creates all figures matching the paper
 4. Saves figures to output/ folder
@@ -53,15 +53,9 @@ from visualizations import (
 
 def get_results_path() -> Path:
     """Get path to results folder."""
-    # Try relative to this file
     base_path = Path(__file__).parent.parent
-    results_path = base_path / 'Scalable_Proportional_PB' / 'results'
-
-    if results_path.exists():
-        return results_path
-
-    # Try as submodule
     results_path = base_path / 'results'
+
     if results_path.exists():
         return results_path
 
