@@ -19,3 +19,4 @@ all_pb_files_*/
 .vscode/
 *.code-workspace
 
+*.egg-info/

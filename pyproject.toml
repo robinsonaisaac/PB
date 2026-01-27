@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scalable-proportional-pb"
+version = "0.1.0"
+description = "Exact Equal Shares (EES) and completion heuristics for proportional participatory budgeting"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Isaac Robinson", email = "isaac.robinson@cs.ox.ac.uk"},
+]
+keywords = ["participatory-budgeting", "voting", "equal-shares", "proportional"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+pabutools = [
+    "pabutools>=1.0",
+]
+
+[project.scripts]
+scalable-pb = "scalable_proportional_pb.__main__:main"
+
+[project.urls]
+Repository = "https://github.com/robinsonaisaac/Scalable_Proportional_PB"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["src/scalable_proportional_pb"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]
+

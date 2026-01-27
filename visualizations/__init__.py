@@ -27,7 +27,9 @@ from .data_loader import (
     load_single_result,
     load_results_folder,
     load_all_results,
+    load_unified_results,
     aggregate_for_comparison,
+    aggregate_ees_vs_mes,
     get_efficiency_statistics,
     get_execution_statistics
 )
@@ -169,7 +171,9 @@ __all__ = [
     'load_single_result',
     'load_results_folder',
     'load_all_results',
+    'load_unified_results',
     'aggregate_for_comparison',
+    'aggregate_ees_vs_mes',
     'get_efficiency_statistics',
     'get_execution_statistics',
 
