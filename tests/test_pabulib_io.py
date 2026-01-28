@@ -9,8 +9,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from scalable_proportional_pb.pabulib_io import parse_pabulib_file
-from scalable_proportional_pb.ees import ees_with_outcome, cardinal_utility
+from pb.pabulib_io import parse_pabulib_file
+from pb.ees import ees_with_outcome, cardinal_utility
 
 
 class TestPabulibParsing:
@@ -19,7 +19,7 @@ class TestPabulibParsing:
     @pytest.fixture
     def test_instance_path(self):
         """Path to the test instance."""
-        return Path(__file__).parent.parent / "PB_scripts" / "test_instance.pb"
+        return Path(__file__).parent.parent / "cli" / "test_instance.pb"
     
     def test_parse_test_instance(self, test_instance_path):
         """Parse the test instance file."""
@@ -58,7 +58,7 @@ class TestPabulibRealInstance:
     @pytest.fixture
     def real_instance_path(self):
         """Path to the actual test instance."""
-        return Path(__file__).parent.parent / "PB_scripts" / "test_instance.pb"
+        return Path(__file__).parent.parent / "cli" / "test_instance.pb"
     
     def test_real_instance_metadata(self, real_instance_path):
         """Verify metadata from test_instance.pb."""

@@ -1,5 +1,5 @@
 """
-Tests for equivalence between OLD (PB_scripts/core/) and NEW (scalable_proportional_pb/) implementations.
+Tests for equivalence between OLD (cli/core/) and NEW (pb/) implementations.
 
 These tests verify that both implementations produce identical results, which is
 critical for validating the refactoring that replaces the OLD algorithms with
@@ -13,17 +13,17 @@ import sys
 
 # Add paths for both implementations
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
-sys.path.insert(0, str(Path(__file__).parent.parent / "PB_scripts"))
+sys.path.insert(0, str(Path(__file__).parent.parent / "cli"))
 
 # NEW implementation imports
-from scalable_proportional_pb import (
+from pb import (
     parse_pabulib_file,
     ees_with_outcome,
     add_opt_cardinal,
     add_opt_uniform,
 )
-from scalable_proportional_pb.ees import cardinal_utility as new_cardinal_utility, cost_utility as new_cost_utility
-from scalable_proportional_pb.types import Election, Project
+from pb.ees import cardinal_utility as new_cardinal_utility, cost_utility as new_cost_utility
+from pb.types import Election, Project
 
 # OLD implementation imports (uses pabutools)
 try:
@@ -41,7 +41,7 @@ except ImportError:
 
 
 # Test instance directory
-TEST_INSTANCES_DIR = Path(__file__).parent.parent.parent / "ees_vs_mes_test_instances"
+TEST_INSTANCES_DIR = Path(__file__).parent / "fixtures"
 
 
 def get_test_instance_paths():
@@ -400,7 +400,7 @@ class TestNewImplementationOnly:
                 f"Voter {v} payment should be exactly {expected_payment}, got {actual}"
 
 
-# Expected outcomes for test instances (from ees_vs_mes_test_instances README)
+# Expected outcomes for test instances (from tests/fixtures README)
 EXPECTED_OUTCOMES = {
     "instance_01_basic_difference.pb": {"A", "B"},  # EES selects A and B
     "instance_03_cascading_poverty.pb": {"A"},      # EES selects only A

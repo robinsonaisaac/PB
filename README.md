@@ -39,19 +39,19 @@ pip install -e ".[dev]"
 
 ## Quick Start
 
-### Unified CLI (PB_scripts/run_pb.py)
+### Unified CLI (cli/run_pb.py)
 
 The unified CLI provides a single entry point for all participatory budgeting algorithms:
 
 ```bash
 # Run EES with cardinal (approval) utilities and ADD-OPT completion
-python PB_scripts/run_pb.py data.pb -a ees -u cardinal -c add-opt
+python cli/run_pb.py data.pb -a ees -u cardinal -c add-opt
 
 # Run MES (waterflow) with cost utilities
-python PB_scripts/run_pb.py data.pb -a mes -u cost -c none
+python cli/run_pb.py data.pb -a mes -u cost -c none
 
 # Run EES with ADD-OPT-SKIP heuristic in exhaustive mode
-python PB_scripts/run_pb.py data.pb -a ees -u cardinal -c add-opt-skip --exhaustive
+python cli/run_pb.py data.pb -a ees -u cardinal -c add-opt-skip --exhaustive
 ```
 
 **CLI Options:**
@@ -72,13 +72,13 @@ For cluster computing, use the unified submission script:
 
 ```bash
 # Submit EES jobs with cardinal utilities and ADD-OPT completion
-./submission_scripts/submit_pb.sh -a ees -u cardinal -c add-opt -d /path/to/pb/files
+./scripts/submit_pb.sh -a ees -u cardinal -c add-opt -d /path/to/pb/files
 
 # Submit MES jobs with cost utilities in exhaustive mode
-./submission_scripts/submit_pb.sh -a mes -u cost -c add-one -e -d /path/to/pb/files
+./scripts/submit_pb.sh -a mes -u cost -c add-one -e -d /path/to/pb/files
 
 # With custom partition and time limit
-./submission_scripts/submit_pb.sh -a ees -u cardinal -c add-opt-skip -d /data -p long -t 02:00:00
+./scripts/submit_pb.sh -a ees -u cardinal -c add-opt-skip -d /data -p long -t 02:00:00
 ```
 
 ### Module CLI
@@ -87,28 +87,28 @@ You can also use the module directly for EES:
 
 ```bash
 # Run EES with approval (cardinal) utility
-python -m scalable_proportional_pb run --input data.pb --utility approval
+python -m pb run --input data.pb --utility approval
 
 # Run EES with cost (uniform) utility
-python -m scalable_proportional_pb run --input data.pb --utility cost
+python -m pb run --input data.pb --utility cost
 
 # Run with ADD-OPT-SKIP completion (recommended)
-python -m scalable_proportional_pb run --input data.pb --completion add-opt-skip
+python -m pb run --input data.pb --completion add-opt-skip
 
 # Run with exhaustive completion (explores all budget levels)
-python -m scalable_proportional_pb run --input data.pb --completion add-one --exhaustive
+python -m pb run --input data.pb --completion add-one --exhaustive
 ```
 
 ### Python API
 
 ```python
-from scalable_proportional_pb import (
+from pb import (
     parse_pabulib_file,
     ees,
     ees_with_outcome,
 )
-from scalable_proportional_pb.ees import cardinal_utility, cost_utility
-from scalable_proportional_pb.completion import (
+from pb.ees import cardinal_utility, cost_utility
+from pb.completion import (
     add_one_completion,
     add_opt_completion,
     add_opt_skip_completion,
@@ -244,7 +244,7 @@ The library includes a comprehensive test suite with unit tests, integration tes
 pytest tests/ -v
 
 # Run with coverage
-pytest tests/ --cov=scalable_proportional_pb
+pytest tests/ --cov=pb
 ```
 
 ---
@@ -253,7 +253,7 @@ pytest tests/ --cov=scalable_proportional_pb
 
 ```
 PB/
-├── src/scalable_proportional_pb/
+├── src/pb/                  # Core algorithm library
 │   ├── __init__.py          # Public API exports
 │   ├── __main__.py          # Module CLI entry point
 │   ├── types.py             # Election, EESOutcome, Project
@@ -264,14 +264,14 @@ PB/
 │   ├── add_opt_uniform.py   # Algorithm 5: ADD-OPT (uniform)
 │   ├── completion.py        # Completion heuristics
 │   └── pabulib_io.py        # Pabulib file I/O
-├── PB_scripts/
-│   ├── run_pb.py            # Unified CLI for EES and MES
+├── cli/                     # Unified CLI for EES and MES
+│   ├── run_pb.py            # Main CLI entry point
 │   └── core/
 │       ├── cli.py           # CLI utilities and results handling
 │       └── mes.py           # MES/Waterflow wrappers (uses pabutools)
-├── submission_scripts/
+├── scripts/                 # SLURM and utility scripts
 │   └── submit_pb.sh         # Unified SLURM submission script
-├── visualizations/          # Paper figure generation
+├── figures/                 # Paper figure generation
 │   ├── __init__.py          # Public API exports
 │   ├── data_loader.py       # Results loading utilities
 │   ├── efficiency_scatter.py
@@ -280,8 +280,10 @@ PB/
 │   ├── dataset_stats.py
 │   └── demo.py              # Generate all paper figures
 ├── tests/                   # Test suite
+│   └── fixtures/            # Hand-crafted test instances
+├── data/                    # Pabulib dataset files
 ├── results/                 # Output directory for experiment results
-├── ees_vs_mes_test_instances/  # Hand-crafted test cases
+├── web/                     # Interactive HTML visualizer
 ├── pyproject.toml           # Package configuration
 └── README.md
 ```

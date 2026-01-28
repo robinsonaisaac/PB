@@ -32,9 +32,9 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from scalable_proportional_pb.types import Election, Project
-from scalable_proportional_pb.ees import ees_with_outcome, cost_utility
-from scalable_proportional_pb.add_opt_uniform import add_opt_uniform
+from pb.types import Election, Project
+from pb.ees import ees_with_outcome, cost_utility
+from pb.add_opt_uniform import add_opt_uniform
 
 
 def lcm(a: int, b: int) -> int:

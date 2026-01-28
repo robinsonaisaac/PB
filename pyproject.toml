@@ -33,7 +33,7 @@ pabutools = [
 ]
 
 [project.scripts]
-scalable-pb = "scalable_proportional_pb.__main__:main"
+scalable-pb = "pb.__main__:main"
 
 [project.urls]
 Repository = "https://github.com/robinsonaisaac/PB"
@@ -48,7 +48,7 @@ python_functions = ["test_*"]
 addopts = "-v --tb=short"
 
 [tool.coverage.run]
-source = ["src/scalable_proportional_pb"]
+source = ["src/pb"]
 branch = true
 
 [tool.coverage.report]

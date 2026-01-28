@@ -18,13 +18,13 @@ from typing import Set, Optional
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from scalable_proportional_pb.types import Election, Project, EESOutcome, leximax_lt, leximax_gt
-from scalable_proportional_pb.ees import ees, ees_with_outcome, cardinal_utility, cost_utility
-from scalable_proportional_pb.gpc_cardinal import greedy_project_change_cardinal
-from scalable_proportional_pb.add_opt_cardinal import add_opt_cardinal
-from scalable_proportional_pb.gpc_uniform import greedy_project_change_uniform, compute_L_lists
-from scalable_proportional_pb.add_opt_uniform import add_opt_uniform
-from scalable_proportional_pb.completion import (
+from pb.types import Election, Project, EESOutcome, leximax_lt, leximax_gt
+from pb.ees import ees, ees_with_outcome, cardinal_utility, cost_utility
+from pb.gpc_cardinal import greedy_project_change_cardinal
+from pb.add_opt_cardinal import add_opt_cardinal
+from pb.gpc_uniform import greedy_project_change_uniform, compute_L_lists
+from pb.add_opt_uniform import add_opt_uniform
+from pb.completion import (
     add_one_completion,
     add_opt_completion,
     add_opt_skip_completion,

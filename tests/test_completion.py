@@ -9,9 +9,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from scalable_proportional_pb.types import Election, Project
-from scalable_proportional_pb.ees import ees_with_outcome, cardinal_utility, cost_utility
-from scalable_proportional_pb.completion import (
+from pb.types import Election, Project
+from pb.ees import ees_with_outcome, cardinal_utility, cost_utility
+from pb.completion import (
     add_one_completion,
     add_opt_completion,
     add_opt_skip_completion,

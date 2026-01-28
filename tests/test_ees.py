@@ -11,8 +11,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from scalable_proportional_pb.types import Election, Project, EESOutcome
-from scalable_proportional_pb.ees import ees, ees_with_outcome, cardinal_utility, cost_utility
+from pb.types import Election, Project, EESOutcome
+from pb.ees import ees, ees_with_outcome, cardinal_utility, cost_utility
 
 
 def make_election(
