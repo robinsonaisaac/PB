@@ -123,6 +123,43 @@ class EESOutcome:
         return self.total_cost / actual_budget
 
 
+@dataclass
+class CompletionResult:
+    """
+    Result of running a completion heuristic.
+
+    Tracks the full trajectory of the algorithm, not just the final outcome.
+
+    Attributes:
+        outcome: The final/best EESOutcome
+        step_count: Number of budget increase iterations
+        budget_deltas: List of budget increase amounts (d values) at each step
+        efficiency_trajectory: Efficiency at each step (including initial)
+        budget_trajectory: Budget level at each step (including initial)
+        selected_trajectory: Number of selected projects at each step
+    """
+    outcome: EESOutcome
+    step_count: int
+    budget_deltas: List[Fraction]
+    efficiency_trajectory: List[Fraction]
+    budget_trajectory: List[Fraction]
+    selected_trajectory: List[int]
+
+    @property
+    def highest_efficiency(self) -> Fraction:
+        """Return the highest efficiency achieved during the trajectory."""
+        if not self.efficiency_trajectory:
+            return Fraction(0)
+        return max(self.efficiency_trajectory)
+
+    @property
+    def final_efficiency(self) -> Fraction:
+        """Return the final efficiency."""
+        if not self.efficiency_trajectory:
+            return Fraction(0)
+        return self.efficiency_trajectory[-1]
+
+
 def leximax_lt(c1: Tuple[Fraction, Optional[str]], c2: Tuple[Fraction, Optional[str]]) -> bool:
     """
     Compare two leximax payments: c1 <_lex c2.

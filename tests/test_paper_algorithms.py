@@ -684,11 +684,11 @@ class TestCompletionHeuristicsComparison:
         )
         
         base_outcome = ees_with_outcome(e, cardinal_utility)
-        add_opt_outcome = add_opt_completion(e, cardinal_utility, is_cardinal=True)
-        
+        add_opt_result = add_opt_completion(e, cardinal_utility, is_cardinal=True)
+
         base_eff = base_outcome.spending_efficiency(e.budget)
-        add_opt_eff = add_opt_outcome.spending_efficiency(e.budget)
-        
+        add_opt_eff = add_opt_result.outcome.spending_efficiency(e.budget)
+
         assert add_opt_eff >= base_eff
     
     def test_add_one_vs_add_opt_both_feasible(self):
@@ -703,11 +703,11 @@ class TestCompletionHeuristicsComparison:
             budget=25,
         )
         
-        add_one_outcome = add_one_completion(e, cardinal_utility)
-        add_opt_outcome = add_opt_completion(e, cardinal_utility, is_cardinal=True)
-        
-        assert add_one_outcome.total_cost <= e.budget
-        assert add_opt_outcome.total_cost <= e.budget
+        add_one_result = add_one_completion(e, cardinal_utility)
+        add_opt_result = add_opt_completion(e, cardinal_utility, is_cardinal=True)
+
+        assert add_one_result.outcome.total_cost <= e.budget
+        assert add_opt_result.outcome.total_cost <= e.budget
     
     def test_add_opt_skip_skips_selected(self):
         """ADD-OPT-SKIP only considers unselected projects."""
@@ -721,10 +721,10 @@ class TestCompletionHeuristicsComparison:
             budget=50,
         )
         
-        outcome = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True)
-        
+        result = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True)
+
         # Should be feasible
-        assert outcome.total_cost <= e.budget
+        assert result.outcome.total_cost <= e.budget
 
 
 class TestCompletionEfficiency:
@@ -752,10 +752,10 @@ class TestCompletionEfficiency:
         base_eff = base_outcome.spending_efficiency(e.budget)
         
         # Try all completion methods
-        add_one_eff = add_one_completion(e, cardinal_utility).spending_efficiency(e.budget)
-        add_opt_eff = add_opt_completion(e, cardinal_utility, is_cardinal=True).spending_efficiency(e.budget)
-        add_opt_skip_eff = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True).spending_efficiency(e.budget)
-        
+        add_one_eff = add_one_completion(e, cardinal_utility).outcome.spending_efficiency(e.budget)
+        add_opt_eff = add_opt_completion(e, cardinal_utility, is_cardinal=True).outcome.spending_efficiency(e.budget)
+        add_opt_skip_eff = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True).outcome.spending_efficiency(e.budget)
+
         # All should be at least as good as base
         assert add_one_eff >= base_eff
         assert add_opt_eff >= base_eff
@@ -777,9 +777,9 @@ class TestCompletionCostUtility:
             budget=50,
         )
         
-        outcome = add_one_completion(e, cost_utility)
-        assert outcome.total_cost <= e.budget
-    
+        result = add_one_completion(e, cost_utility)
+        assert result.outcome.total_cost <= e.budget
+
     def test_add_opt_uniform_completion(self):
         """ADD-OPT with cost utility (uniform) returns feasible outcome."""
         e = make_election(
@@ -791,9 +791,9 @@ class TestCompletionCostUtility:
             },
             budget=45,
         )
-        
-        outcome = add_opt_completion(e, cost_utility, is_cardinal=False)
-        assert outcome.total_cost <= e.budget
+
+        result = add_opt_completion(e, cost_utility, is_cardinal=False)
+        assert result.outcome.total_cost <= e.budget
 
 
 class TestCompleteVariants:
@@ -809,10 +809,10 @@ class TestCompleteVariants:
             },
             budget=15,
         )
-        
-        outcome = add_one_complete(e, cardinal_utility)
-        assert outcome.total_cost <= e.budget
-    
+
+        result = add_one_complete(e, cardinal_utility)
+        assert result.outcome.total_cost <= e.budget
+
     def test_add_opt_complete_best_feasible(self):
         """ADD-OPT complete returns best feasible outcome found."""
         e = make_election(
@@ -824,10 +824,10 @@ class TestCompleteVariants:
             },
             budget=18,
         )
-        
-        outcome = add_opt_complete(e, cardinal_utility, is_cardinal=True)
-        assert outcome.total_cost <= e.budget
-    
+
+        result = add_opt_complete(e, cardinal_utility, is_cardinal=True)
+        assert result.outcome.total_cost <= e.budget
+
     def test_add_opt_skip_complete_same_as_skip(self):
         """ADD-OPT-SKIP complete is same as regular skip (already complete)."""
         e = make_election(
@@ -838,13 +838,13 @@ class TestCompleteVariants:
             },
             budget=30,
         )
-        
-        skip_outcome = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True)
-        complete_outcome = add_opt_skip_complete(e, cardinal_utility, is_cardinal=True)
-        
+
+        skip_result = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True)
+        complete_result = add_opt_skip_complete(e, cardinal_utility, is_cardinal=True)
+
         # Should be identical
-        assert skip_outcome.selected == complete_outcome.selected
-        assert skip_outcome.total_cost == complete_outcome.total_cost
+        assert skip_result.outcome.selected == complete_result.outcome.selected
+        assert skip_result.outcome.total_cost == complete_result.outcome.total_cost
 
 
 # =============================================================================
@@ -884,10 +884,10 @@ class TestEndToEndCardinal:
         
         # Step 4: Run completion
         completed = add_opt_completion(e, cardinal_utility, is_cardinal=True)
-        
+
         # Verify completion is feasible and at least as good
-        assert completed.total_cost <= e.budget
-        assert completed.spending_efficiency(e.budget) >= outcome.spending_efficiency(e.budget)
+        assert completed.outcome.total_cost <= e.budget
+        assert completed.outcome.spending_efficiency(e.budget) >= outcome.spending_efficiency(e.budget)
 
 
 class TestEndToEndUniform:
@@ -923,8 +923,8 @@ class TestEndToEndUniform:
         
         # Step 4: Run completion
         completed = add_opt_completion(e, cost_utility, is_cardinal=False)
-        
-        assert completed.total_cost <= e.budget
+
+        assert completed.outcome.total_cost <= e.budget
 
 
 # =============================================================================

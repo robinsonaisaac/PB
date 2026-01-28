@@ -42,7 +42,7 @@ def make_election(
 
 class TestAddOneCompletion:
     """Tests for ADD-ONE completion heuristic."""
-    
+
     def test_add_one_increases_budget_by_n(self):
         """ADD-ONE should increase total budget by n per iteration."""
         e = make_election(
@@ -54,12 +54,15 @@ class TestAddOneCompletion:
             },
             budget=20,
         )
-        
-        outcome = add_one_completion(e, cardinal_utility)
-        
+
+        result = add_one_completion(e, cardinal_utility)
+
         # Should return a feasible outcome
-        assert outcome.total_cost <= e.budget
-    
+        assert result.outcome.total_cost <= e.budget
+        # Should have trajectory data
+        assert len(result.efficiency_trajectory) >= 1
+        assert result.step_count >= 0
+
     def test_add_one_stops_before_overspending(self):
         """ADD-ONE stops when next increment would overspend."""
         e = make_election(
@@ -70,16 +73,16 @@ class TestAddOneCompletion:
             },
             budget=20,
         )
-        
-        outcome = add_one_completion(e, cardinal_utility)
-        
+
+        result = add_one_completion(e, cardinal_utility)
+
         # Should not exceed actual budget
-        assert outcome.total_cost <= e.budget
+        assert result.outcome.total_cost <= e.budget
 
 
 class TestAddOptCompletion:
     """Tests for ADD-OPT completion heuristic."""
-    
+
     def test_add_opt_feasible_output(self):
         """ADD-OPT should return feasible outcome."""
         e = make_election(
@@ -91,11 +94,11 @@ class TestAddOptCompletion:
             },
             budget=25,
         )
-        
-        outcome = add_opt_completion(e, cardinal_utility, is_cardinal=True)
-        
-        assert outcome.total_cost <= e.budget
-    
+
+        result = add_opt_completion(e, cardinal_utility, is_cardinal=True)
+
+        assert result.outcome.total_cost <= e.budget
+
     def test_add_opt_at_least_as_good_as_no_completion(self):
         """ADD-OPT should do at least as well as base EES."""
         e = make_election(
@@ -108,19 +111,19 @@ class TestAddOptCompletion:
             },
             budget=30,
         )
-        
+
         base_outcome = ees_with_outcome(e, cardinal_utility)
-        completed_outcome = add_opt_completion(e, cardinal_utility, is_cardinal=True)
-        
+        result = add_opt_completion(e, cardinal_utility, is_cardinal=True)
+
         # Completion should achieve >= efficiency
         base_eff = base_outcome.spending_efficiency(e.budget)
-        completed_eff = completed_outcome.spending_efficiency(e.budget)
+        completed_eff = result.outcome.spending_efficiency(e.budget)
         assert completed_eff >= base_eff
 
 
 class TestAddOptSkipCompletion:
     """Tests for ADD-OPT-SKIP completion heuristic."""
-    
+
     def test_add_opt_skip_considers_all_projects(self):
         """ADD-OPT-SKIP continues until all projects considered."""
         e = make_election(
@@ -132,12 +135,12 @@ class TestAddOptSkipCompletion:
             },
             budget=30,
         )
-        
-        outcome = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True)
-        
+
+        result = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True)
+
         # Should return feasible outcome
-        assert outcome.total_cost <= e.budget
-    
+        assert result.outcome.total_cost <= e.budget
+
     def test_add_opt_skip_best_efficiency(self):
         """ADD-OPT-SKIP returns highest efficiency feasible outcome."""
         e = make_election(
@@ -150,16 +153,16 @@ class TestAddOptSkipCompletion:
             },
             budget=50,
         )
-        
-        outcome = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True)
-        
+
+        result = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True)
+
         # Just verify it's feasible
-        assert outcome.total_cost <= e.budget
+        assert result.outcome.total_cost <= e.budget
 
 
 class TestCompleteVariants:
     """Tests for 'complete' variants that continue until all projects selected."""
-    
+
     def test_add_one_complete_explores_all(self):
         """ADD-ONE complete continues until all projects selected."""
         e = make_election(
@@ -170,12 +173,12 @@ class TestCompleteVariants:
             },
             budget=15,
         )
-        
-        outcome = add_one_complete(e, cardinal_utility)
-        
+
+        result = add_one_complete(e, cardinal_utility)
+
         # Should be feasible
-        assert outcome.total_cost <= e.budget
-    
+        assert result.outcome.total_cost <= e.budget
+
     def test_add_opt_complete_best_feasible(self):
         """ADD-OPT complete returns best feasible outcome."""
         e = make_election(
@@ -187,15 +190,15 @@ class TestCompleteVariants:
             },
             budget=18,
         )
-        
-        outcome = add_opt_complete(e, cardinal_utility, is_cardinal=True)
-        
-        assert outcome.total_cost <= e.budget
+
+        result = add_opt_complete(e, cardinal_utility, is_cardinal=True)
+
+        assert result.outcome.total_cost <= e.budget
 
 
 class TestCompletionWithCostUtility:
     """Test completion heuristics with cost utility."""
-    
+
     def test_add_one_cost_utility(self):
         """ADD-ONE with cost utility."""
         e = make_election(
@@ -207,10 +210,10 @@ class TestCompletionWithCostUtility:
             },
             budget=50,
         )
-        
-        outcome = add_one_completion(e, cost_utility)
-        assert outcome.total_cost <= e.budget
-    
+
+        result = add_one_completion(e, cost_utility)
+        assert result.outcome.total_cost <= e.budget
+
     def test_add_opt_skip_cost_utility(self):
         """ADD-OPT-SKIP with cost utility."""
         e = make_election(
@@ -222,7 +225,75 @@ class TestCompletionWithCostUtility:
             },
             budget=45,
         )
-        
-        outcome = add_opt_skip_completion(e, cost_utility, is_cardinal=False)
-        assert outcome.total_cost <= e.budget
 
+        result = add_opt_skip_completion(e, cost_utility, is_cardinal=False)
+        assert result.outcome.total_cost <= e.budget
+
+
+class TestTrajectoryTracking:
+    """Tests for trajectory tracking in CompletionResult."""
+
+    def test_trajectory_lengths_match(self):
+        """All trajectory lists should have the same length."""
+        e = make_election(
+            project_costs={"p1": 5, "p2": 10, "p3": 15},
+            approvals={
+                0: ["p1", "p2", "p3"],
+                1: ["p1", "p2"],
+                2: ["p2", "p3"],
+            },
+            budget=30,
+        )
+
+        result = add_opt_skip_completion(e, cardinal_utility, is_cardinal=True)
+
+        # All trajectories should have the same length
+        assert len(result.efficiency_trajectory) == len(result.budget_trajectory)
+        assert len(result.efficiency_trajectory) == len(result.selected_trajectory)
+
+    def test_budget_deltas_count_matches_step_count(self):
+        """Number of budget deltas should match step count."""
+        e = make_election(
+            project_costs={"p1": 5, "p2": 10, "p3": 15},
+            approvals={
+                0: ["p1", "p2", "p3"],
+                1: ["p1", "p2"],
+            },
+            budget=30,
+        )
+
+        result = add_one_completion(e, cardinal_utility)
+
+        assert len(result.budget_deltas) == result.step_count
+
+    def test_efficiency_trajectory_values(self):
+        """Efficiency values should be between 0 and some reasonable upper bound."""
+        e = make_election(
+            project_costs={"p1": 5, "p2": 10},
+            approvals={
+                0: ["p1", "p2"],
+                1: ["p1", "p2"],
+            },
+            budget=15,
+        )
+
+        result = add_opt_completion(e, cardinal_utility, is_cardinal=True)
+
+        for eff in result.efficiency_trajectory:
+            assert eff >= 0
+
+    def test_selected_trajectory_non_decreasing(self):
+        """Number of selected projects should be non-decreasing in trajectory."""
+        e = make_election(
+            project_costs={"p1": 5, "p2": 10, "p3": 15},
+            approvals={
+                0: ["p1", "p2", "p3"],
+                1: ["p1", "p2", "p3"],
+            },
+            budget=30,
+        )
+
+        result = add_one_complete(e, cardinal_utility)
+
+        for i in range(1, len(result.selected_trajectory)):
+            assert result.selected_trajectory[i] >= result.selected_trajectory[i-1]

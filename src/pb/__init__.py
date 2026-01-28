@@ -8,7 +8,7 @@ Implements the Exact Equal Shares (EES) method and completion heuristics
 Tie-breaking: lexicographic by project id/name.
 """
 
-from .types import Project, Election, EESOutcome
+from .types import Project, Election, EESOutcome, CompletionResult
 from .ees import ees, ees_with_outcome
 from .gpc_cardinal import greedy_project_change_cardinal
 from .add_opt_cardinal import add_opt_cardinal
@@ -28,6 +28,7 @@ __all__ = [
     "Project",
     "Election",
     "EESOutcome",
+    "CompletionResult",
     "ees",
     "ees_with_outcome",
     "greedy_project_change_cardinal",

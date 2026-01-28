@@ -25,12 +25,13 @@ Examples:
 """
 
 import argparse
+import json
 import pandas as pd
 from pathlib import Path
 import os
 import sys
 from dataclasses import dataclass, field
-from typing import List, Set, Optional, Tuple, Any
+from typing import List, Set, Optional, Any
 from fractions import Fraction
 
 # Add src to path for pb
@@ -39,14 +40,18 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from pb import (
     parse_pabulib_file,
     ees_with_outcome,
-    add_opt_cardinal,
-    add_opt_uniform,
-    greedy_project_change_cardinal,
-    greedy_project_change_uniform,
+    CompletionResult,
 )
 from pb.ees import cardinal_utility, cost_utility
-from pb.gpc_uniform import compute_L_lists
 from pb.types import Election, EESOutcome
+from pb.completion import (
+    add_one_completion,
+    add_opt_completion,
+    add_opt_skip_completion,
+    add_one_complete,
+    add_opt_complete,
+    add_opt_skip_complete,
+)
 
 from core.cli import setup_results_dir, save_results
 
@@ -57,27 +62,30 @@ from core.cli import setup_results_dir, save_results
 
 @dataclass
 class EESResult:
-    """Result container for EES algorithms with detailed statistics."""
+    """Result container for EES algorithms with detailed statistics and trajectories."""
     most_efficient_project_set: Set[str]
     highest_efficiency_attained: float
     final_project_set: Set[str]
     final_efficiency: float
     budget_increase_count: int
     budget_increase_list: List[float] = field(default_factory=list)
+    efficiency_trajectory: List[float] = field(default_factory=list)
+    budget_trajectory: List[float] = field(default_factory=list)
+    selected_trajectory: List[int] = field(default_factory=list)
     monotonic_violation: int = 0  # Only tracked in exhaustive mode
 
     def to_dataframe(self) -> pd.DataFrame:
-        """Convert to DataFrame matching legacy output format."""
+        """Convert to DataFrame with full trajectory data."""
         data = {
-            'most_efficient_project_set': [list(self.most_efficient_project_set)],
+            'most_efficient_project_set': [json.dumps(list(self.most_efficient_project_set))],
             'highest_efficiency_attained': [self.highest_efficiency_attained],
-            'final_project_set': [list(self.final_project_set)],
+            'final_project_set': [json.dumps(list(self.final_project_set))],
             'final_efficiency': [self.final_efficiency],
             'budget_increase_count': [self.budget_increase_count],
-            'len_budget_increase_list': [len(self.budget_increase_list)],
-            'max_budget_increase': [max(self.budget_increase_list)] if self.budget_increase_list else [0],
-            'min_budget_increase': [min(self.budget_increase_list)] if self.budget_increase_list else [0],
-            'avg_budget_increase': [sum(self.budget_increase_list)/len(self.budget_increase_list)] if self.budget_increase_list else [0],
+            'budget_increase_list': [json.dumps(self.budget_increase_list)],
+            'efficiency_trajectory': [json.dumps(self.efficiency_trajectory)],
+            'budget_trajectory': [json.dumps(self.budget_trajectory)],
+            'selected_trajectory': [json.dumps(self.selected_trajectory)],
             'monotonic_violation': [self.monotonic_violation],
         }
         return pd.DataFrame(data)
@@ -96,9 +104,6 @@ class MESResult:
             'selected_projects': [self.selected_projects],
             'efficiency': [self.efficiency],
             'budget_increase_count': [self.budget_increase_count],
-            'max_budget_increase': [0],
-            'min_budget_increase': [0],
-            'avg_budget_increase': [0],
         }
         return pd.DataFrame(data)
 
@@ -107,29 +112,41 @@ class MESResult:
 # EES Completion Implementations
 # =============================================================================
 
-def _add_opt_skip_cardinal(election: Election, outcome: EESOutcome) -> Optional[Fraction]:
-    """ADD-OPT-SKIP for cardinal utilities: only consider unselected projects."""
-    d: Optional[Fraction] = None
-    for p_id in election.projects:
-        if p_id not in outcome.selected:
-            gpc_d = greedy_project_change_cardinal(election, outcome, p_id)
-            if gpc_d is not None and gpc_d > 0:
-                if d is None or gpc_d < d:
-                    d = gpc_d
-    return d
+def _completion_result_to_ees_result(
+    result: CompletionResult,
+    actual_budget: Fraction,
+    exhaustive: bool = False,
+) -> EESResult:
+    """Convert a CompletionResult to an EESResult."""
+    # Find highest efficiency and corresponding project set
+    highest_eff = Fraction(0)
+    most_efficient_idx = 0
+    exceeded_budget = False
+    monotonic_violation = 0
 
+    for i, eff in enumerate(result.efficiency_trajectory):
+        # Check if this step is feasible (efficiency <= 1 means cost <= budget)
+        if eff <= 1:
+            if eff > highest_eff:
+                if exceeded_budget and exhaustive:
+                    monotonic_violation = 1
+                highest_eff = eff
+                most_efficient_idx = i
+        else:
+            exceeded_budget = True
 
-def _add_opt_skip_uniform(election: Election, outcome: EESOutcome, utility) -> Optional[Fraction]:
-    """ADD-OPT-SKIP for uniform utilities: only consider unselected projects."""
-    L_lists = compute_L_lists(election, outcome, utility)
-    d: Optional[Fraction] = None
-    for p_id in election.projects:
-        if p_id not in outcome.selected:
-            gpc_d = greedy_project_change_uniform(election, outcome, p_id, utility, L_lists)
-            if gpc_d is not None and gpc_d > 0:
-                if d is None or gpc_d < d:
-                    d = gpc_d
-    return d
+    return EESResult(
+        most_efficient_project_set=set(result.outcome.selected),
+        highest_efficiency_attained=float(highest_eff),
+        final_project_set=set(result.outcome.selected),
+        final_efficiency=float(result.outcome.spending_efficiency(actual_budget)),
+        budget_increase_count=result.step_count,
+        budget_increase_list=[float(d) for d in result.budget_deltas],
+        efficiency_trajectory=[float(e) for e in result.efficiency_trajectory],
+        budget_trajectory=[float(b) for b in result.budget_trajectory],
+        selected_trajectory=result.selected_trajectory,
+        monotonic_violation=monotonic_violation,
+    )
 
 
 def run_ees_no_completion(
@@ -147,6 +164,9 @@ def run_ees_no_completion(
         final_efficiency=efficiency,
         budget_increase_count=0,
         budget_increase_list=[],
+        efficiency_trajectory=[efficiency],
+        budget_trajectory=[float(election.budget)],
+        selected_trajectory=[len(outcome.selected)],
         monotonic_violation=0,
     )
 
@@ -164,59 +184,12 @@ def run_ees_add_one(
         utility: Utility function (cardinal_utility or cost_utility)
         exhaustive: If True, continue until all projects selected
     """
-    actual_budget = election.budget
-    n = election.n
-    number_total_projects = election.m
+    if exhaustive:
+        result = add_one_complete(election, utility)
+    else:
+        result = add_one_completion(election, utility)
 
-    outcome = ees_with_outcome(election, utility)
-
-    most_efficient_selected = set(outcome.selected)
-    efficiency_tracker = float(outcome.spending_efficiency(actual_budget))
-    budget_increase_count = 0
-    budget_increase_list: List[float] = []
-    monotonic_violation = 0
-    exceeded_non_exhaustive_case = 0
-
-    prev_outcome = outcome
-    current_budget = election.budget
-
-    while True:
-        if len(outcome.selected) == number_total_projects:
-            break
-
-        # ADD-ONE: increment by n (1 per voter)
-        d = Fraction(1)
-        budget_increase_count += 1
-        current_budget = current_budget + n * d
-
-        outcome = ees_with_outcome(election.with_budget(current_budget), utility)
-
-        if outcome.total_cost > actual_budget:
-            if not exhaustive:
-                break
-            exceeded_non_exhaustive_case = 1
-        else:
-            budget_increase_list.append(float(d))
-            prev_outcome = outcome
-
-            efficiency_candidate = float(outcome.spending_efficiency(actual_budget))
-            if efficiency_candidate > efficiency_tracker:
-                if exceeded_non_exhaustive_case:
-                    monotonic_violation = 1
-                efficiency_tracker = efficiency_candidate
-                most_efficient_selected = set(outcome.selected)
-
-    final_efficiency = float(prev_outcome.spending_efficiency(actual_budget))
-
-    return EESResult(
-        most_efficient_project_set=most_efficient_selected,
-        highest_efficiency_attained=efficiency_tracker,
-        final_project_set=set(prev_outcome.selected),
-        final_efficiency=final_efficiency,
-        budget_increase_count=budget_increase_count,
-        budget_increase_list=budget_increase_list,
-        monotonic_violation=monotonic_violation,
-    )
+    return _completion_result_to_ees_result(result, election.budget, exhaustive)
 
 
 def run_ees_add_opt(
@@ -234,66 +207,12 @@ def run_ees_add_opt(
         is_cardinal: True for cardinal utilities, False for cost/uniform
         exhaustive: If True, continue until all projects selected
     """
-    actual_budget = election.budget
-    n = election.n
-    number_total_projects = election.m
+    if exhaustive:
+        result = add_opt_complete(election, utility, is_cardinal)
+    else:
+        result = add_opt_completion(election, utility, is_cardinal)
 
-    outcome = ees_with_outcome(election, utility)
-
-    most_efficient_selected = set(outcome.selected)
-    efficiency_tracker = float(outcome.spending_efficiency(actual_budget))
-    budget_increase_count = 0
-    budget_increase_list: List[float] = []
-    monotonic_violation = 0
-    exceeded_non_exhaustive_case = 0
-
-    prev_outcome = outcome
-    current_budget = election.budget
-
-    while True:
-        # Compute minimum budget increase using ADD-OPT
-        if is_cardinal:
-            d = add_opt_cardinal(election.with_budget(current_budget), outcome)
-        else:
-            d = add_opt_uniform(election.with_budget(current_budget), outcome, utility)
-
-        if d is None:  # Infinity - no more changes possible
-            break
-
-        budget_increase_count += 1
-        current_budget = current_budget + n * d
-
-        outcome = ees_with_outcome(election.with_budget(current_budget), utility)
-
-        if outcome.total_cost > actual_budget:
-            if not exhaustive:
-                break
-            exceeded_non_exhaustive_case = 1
-        else:
-            budget_increase_list.append(float(d))
-            prev_outcome = outcome
-
-            efficiency_candidate = float(outcome.spending_efficiency(actual_budget))
-            if efficiency_candidate > efficiency_tracker:
-                if exceeded_non_exhaustive_case:
-                    monotonic_violation = 1
-                efficiency_tracker = efficiency_candidate
-                most_efficient_selected = set(outcome.selected)
-
-        if len(outcome.selected) == number_total_projects:
-            break
-
-    final_efficiency = float(prev_outcome.spending_efficiency(actual_budget))
-
-    return EESResult(
-        most_efficient_project_set=most_efficient_selected,
-        highest_efficiency_attained=efficiency_tracker,
-        final_project_set=set(prev_outcome.selected),
-        final_efficiency=final_efficiency,
-        budget_increase_count=budget_increase_count,
-        budget_increase_list=budget_increase_list,
-        monotonic_violation=monotonic_violation,
-    )
+    return _completion_result_to_ees_result(result, election.budget, exhaustive)
 
 
 def run_ees_add_opt_skip(
@@ -311,66 +230,10 @@ def run_ees_add_opt_skip(
         is_cardinal: True for cardinal utilities, False for cost/uniform
         exhaustive: If True, continue until all projects selected
     """
-    actual_budget = election.budget
-    n = election.n
-    number_total_projects = election.m
+    # ADD-OPT-SKIP already explores all projects, so exhaustive is the same
+    result = add_opt_skip_completion(election, utility, is_cardinal)
 
-    outcome = ees_with_outcome(election, utility)
-
-    most_efficient_selected = set(outcome.selected)
-    efficiency_tracker = float(outcome.spending_efficiency(actual_budget))
-    budget_increase_count = 0
-    budget_increase_list: List[float] = []
-    monotonic_violation = 0
-    exceeded_non_exhaustive_case = 0
-
-    prev_outcome = outcome
-    current_budget = election.budget
-
-    while True:
-        # Compute minimum budget increase using ADD-OPT-SKIP (only unselected)
-        if is_cardinal:
-            d = _add_opt_skip_cardinal(election.with_budget(current_budget), outcome)
-        else:
-            d = _add_opt_skip_uniform(election.with_budget(current_budget), outcome, utility)
-
-        if d is None:  # Infinity - no more changes possible
-            break
-
-        budget_increase_count += 1
-        current_budget = current_budget + n * d
-
-        outcome = ees_with_outcome(election.with_budget(current_budget), utility)
-
-        if outcome.total_cost > actual_budget:
-            if not exhaustive:
-                break
-            exceeded_non_exhaustive_case = 1
-        else:
-            budget_increase_list.append(float(d))
-            prev_outcome = outcome
-
-            efficiency_candidate = float(outcome.spending_efficiency(actual_budget))
-            if efficiency_candidate > efficiency_tracker:
-                if exceeded_non_exhaustive_case:
-                    monotonic_violation = 1
-                efficiency_tracker = efficiency_candidate
-                most_efficient_selected = set(outcome.selected)
-
-        if len(outcome.selected) == number_total_projects:
-            break
-
-    final_efficiency = float(prev_outcome.spending_efficiency(actual_budget))
-
-    return EESResult(
-        most_efficient_project_set=most_efficient_selected,
-        highest_efficiency_attained=efficiency_tracker,
-        final_project_set=set(prev_outcome.selected),
-        final_efficiency=final_efficiency,
-        budget_increase_count=budget_increase_count,
-        budget_increase_list=budget_increase_list,
-        monotonic_violation=monotonic_violation,
-    )
+    return _completion_result_to_ees_result(result, election.budget, exhaustive)
 
 
 # =============================================================================
@@ -603,8 +466,8 @@ Note: MES algorithm only supports 'none' and 'add-one' completion methods.
         if args.algorithm == 'ees':
             print(f"  Final efficiency: {df['final_efficiency'].iloc[0]:.4f}")
             print(f"  Highest efficiency: {df['highest_efficiency_attained'].iloc[0]:.4f}")
-            print(f"  Budget increases: {df['budget_increase_count'].iloc[0]}")
-            print(f"  Final project set: {df['final_project_set'].iloc[0]}")
+            print(f"  Budget increases (steps): {df['budget_increase_count'].iloc[0]}")
+            print(f"  Trajectory length: {len(json.loads(df['efficiency_trajectory'].iloc[0]))}")
         else:
             print(f"  Efficiency: {float(df['efficiency'].iloc[0]):.4f}")
             print(f"  Budget increases: {df['budget_increase_count'].iloc[0]}")
