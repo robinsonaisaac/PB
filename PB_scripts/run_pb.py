@@ -65,11 +65,7 @@ def setup_results_dir(subdir: str) -> Path:
     Returns:
         Path to the results directory (created if needed)
     """
-    if "SLURM_SUBMIT_DIR" in os.environ:
-        base_dir = Path(os.environ["SLURM_SUBMIT_DIR"])
-    else:
-        # Get the parent of PB_scripts (where results/ should be)
-        base_dir = Path(__file__).parent.parent
+    base_dir = Path(__file__).parent.parent
     
     results_dir = base_dir / "results" / subdir
     results_dir.mkdir(parents=True, exist_ok=True)
