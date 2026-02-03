@@ -200,7 +200,7 @@ def run_ees_with_completion(
 
         # Compute budget increment based on completion method
         if completion == 'add-one':
-            d = Fraction(1)
+            d = Fraction(actual_budget, 100*n)
         elif completion == 'add-opt':
             if is_cardinal:
                 d = add_opt_cardinal(election.with_budget(current_budget), outcome)
