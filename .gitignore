@@ -20,3 +20,5 @@ all_pb_files_*/
 *.code-workspace
 
 *.egg-info/
+
+Data/*.pb

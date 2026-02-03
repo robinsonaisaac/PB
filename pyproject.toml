@@ -30,6 +30,7 @@ dev = [
 ]
 pabutools = [
     "pabutools>=1.0",
+    "pandas>=3.0.0"
 ]
 
 [project.scripts]
