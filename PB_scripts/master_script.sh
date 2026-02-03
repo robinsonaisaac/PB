@@ -20,7 +20,6 @@
 #   -u, --utility       Utility type: cardinal or cost
 #   -c, --completion    Completion method: none, add-one, add-opt, add-opt-skip
 #   -e, --exhaustive    Enable exhaustive mode (continue until all projects selected)
-#   -s, --script-dir    Directory containing run_pb.py (auto-detected)
 #   -h, --help          Show this help message
 #
 # Examples:
@@ -41,7 +40,6 @@ ALGORITHM=""
 UTILITY=""
 COMPLETION=""
 EXHAUSTIVE=""
-SCRIPT_DIR=""
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -61,10 +59,6 @@ while [[ $# -gt 0 ]]; do
         -e|--exhaustive)
             EXHAUSTIVE="--exhaustive"
             shift
-            ;;
-        -s|--script-dir)
-            SCRIPT_DIR="$2"
-            shift 2
             ;;
         -h|--help)
             sed -n '12,37p' "$0"
@@ -109,25 +103,12 @@ if [[ "$ALGORITHM" == "mes" ]] && [[ "$COMPLETION" != "none" ]] && [[ "$COMPLETI
     exit 1
 fi
 
-# Auto-detect script directory if not specified
-if [[ -z "$SCRIPT_DIR" ]]; then
-    # Try to find run_pb.py relative to this script
-    SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-    if [[ ! -f "$SCRIPT_DIR/run_pb.py" ]]; then
-          echo "Error: Cannot find run_pb.py. Use -s to specify script directory."
-          exit 1
-    fi
-fi
-
-RUN_PB_PATH="$SCRIPT_DIR/run_pb.py"
-
 echo "=============================================="
 echo "Submitting PB jobs with configuration:"
 echo "  Algorithm:   $ALGORITHM"
 echo "  Utility:     $UTILITY"
 echo "  Completion:  $COMPLETION"
 echo "  Exhaustive:  ${EXHAUSTIVE:-no}"
-echo "  Script:      $RUN_PB_PATH"
 echo "=============================================="
 
 # Working under the assumption that a virtualenvironment exists with
@@ -147,4 +128,4 @@ FILE="${FILES[110]}"
 echo "Running on file: $FILE"
 #echo "Array task ID: $SLURM_ARRAY_TASK_ID"
 
-python3 $RUN_PB_PATH $FILE -a $ALGORITHM -u $UTILITY -c $COMPLETION $EXHAUSTIVE
+python3 run_pb.py $FILE -a $ALGORITHM -u $UTILITY -c $COMPLETION $EXHAUSTIVE
