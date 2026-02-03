@@ -113,8 +113,8 @@ echo "=============================================="
 
 # Working under the assumption that a virtualenvironment exists with
 # the proper python version and pabutools and pandas installed
-#module load python/3.12.10
-#source ../.venv/bin/activate
+module load python/3.12.10
+source ../.venv/bin/activate
 
 # Folder containing files
 FILES_DIR="../Data"
@@ -123,9 +123,9 @@ FILES_DIR="../Data"
 FILES=("$FILES_DIR"/*.pb)
 
 # Pick the file corresponding to this array task
-FILE="${FILES[110]}"
+FILE="${FILES[$SLURM_ARRAY_TASK_ID]}"
 
 echo "Running on file: $FILE"
-#echo "Array task ID: $SLURM_ARRAY_TASK_ID"
+echo "Array task ID: $SLURM_ARRAY_TASK_ID"
 
 python3 run_pb.py $FILE -a $ALGORITHM -u $UTILITY -c $COMPLETION $EXHAUSTIVE
