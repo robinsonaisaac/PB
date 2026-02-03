@@ -10,7 +10,7 @@ This algorithm runs in O(n) time.
 """
 
 from fractions import Fraction
-from typing import Dict, List, Optional, Set, Tuple
+from typing import List, Optional, Set, Tuple
 
 from .types import Election, EESOutcome, leximax_gt, leximax_lt
 
@@ -62,21 +62,13 @@ def greedy_project_change_cardinal(
     
     # Build leximax payments list: sorted (voter, leximax_payment) for voters in O_p(X)
     # Sorted by leximax order (ascending).
-    # Since leximax_lt prefers Larger IDs (p1 > p2), we must sort such that
-    # Larger IDs come before Smaller IDs for equal amounts.
-    # Standard string sort is A < B. We want B < A.
     class LeximaxKey:
         def __init__(self, item):
             self.amount = item[1][0]
             self.pid = item[1][1]
         
         def __lt__(self, other):
-            if self.amount != other.amount:
-                return self.amount < other.amount
-            if self.pid is None: return True
-            if other.pid is None: return False
-            # Invert ID comparison: Larger ID is "smaller/better" in leximax
-            return self.pid > other.pid
+            return leximax_lt((self.amount, self.pid), (other.amount, other.pid))
             
     leximax_list: List[Tuple[int, Tuple[Fraction, Optional[str]]]] = sorted(
         [(v, outcome.leximax_payment(v)) for v in O_p_X],
@@ -143,22 +135,16 @@ def greedy_project_change_cardinal(
             if required > 0:
                 if d is None or required < d:
                     d = required
+            else:
+                # If get to this point, then the voters can purchase the project without a subsidy, which contradicts the outcome being stable
+                raise ValueError(f"The given outcome is not stable, voters {LQ} can use remaining and voters {SL} can use leximax to buy {project_id}")
             
             # Remove vi from LQ
             LQ.discard(vi)
             i += 1
             continue
         
-        # If we've exhausted leftover_list but still have SL voters,
-        # we need to check if they should be removed
-        if j < len(leximax_list):
-            wj, cj = leximax_list[j]
-            if leximax_lt(cj, (PvP, project_id)):
-                SL.discard(wj)
-                j += 1
-                continue
-        
-        # No more progress possible
-        break
+        # If get to this point, then leftover list is empty, but there are still voters in SL whos leximax payment is all greater than equal split cost
+        raise ValueError(f"The given outcome is not stable, voters {SL} can split cost using their leximax payments to buy {project_id}")
     
     return d

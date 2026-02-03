@@ -14,12 +14,11 @@ import pytest
 from fractions import Fraction
 import sys
 from pathlib import Path
-from typing import Set, Optional
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from scalable_proportional_pb.types import Election, Project, EESOutcome, leximax_lt, leximax_gt
-from scalable_proportional_pb.ees import ees, ees_with_outcome, cardinal_utility, cost_utility
+from scalable_proportional_pb.ees import ees_with_outcome, cardinal_utility, cost_utility
 from scalable_proportional_pb.gpc_cardinal import greedy_project_change_cardinal
 from scalable_proportional_pb.add_opt_cardinal import add_opt_cardinal
 from scalable_proportional_pb.gpc_uniform import greedy_project_change_uniform, compute_L_lists
@@ -1024,9 +1023,9 @@ class TestLeximaxOrdering:
         assert not leximax_lt(c2, c1)
     
     def test_leximax_lt_tie_break_by_id(self):
-        """Equal amounts: larger ID is 'smaller' (preferred)."""
-        c1 = (Fraction(5), "p2")  # p2 > p1
-        c2 = (Fraction(5), "p1")
+        """Equal amounts: smaller ID is 'smaller' (preferred)."""
+        c1 = (Fraction(5), "p1")  # p2 > p1
+        c2 = (Fraction(5), "p2")
         assert leximax_lt(c1, c2)  # c1 is "smaller" because p2 > p1
         assert not leximax_lt(c2, c1)
     

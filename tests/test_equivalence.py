@@ -353,7 +353,7 @@ class TestNewImplementationOnly:
                 f"[{pb_file.name}] Project {pid} payments don't sum to cost"
 
     def test_tie_breaking_determinism(self):
-        """Test that tie-breaking is deterministic (larger project ID wins)."""
+        """Test that tie-breaking is deterministic (smaller project ID wins)."""
         # Create election with projects that should tie
         election = Election(
             projects={
@@ -370,9 +370,9 @@ class TestNewImplementationOnly:
 
         outcome = ees_with_outcome(election, new_cardinal_utility)
 
-        # With equal BpB, larger project ID ("B" > "A") should be selected first
-        assert outcome.selection_order[0][0] == "B", \
-            f"Expected 'B' to be selected first (larger ID), got {outcome.selection_order[0][0]}"
+        # With equal BpB, smaller project ID ("A" < "B") should be selected first
+        assert outcome.selection_order[0][0] == "A", \
+            f"Expected 'A' to be selected first (smaller ID), got {outcome.selection_order[0][0]}"
 
     def test_fraction_precision(self):
         """Test that Fraction arithmetic preserves precision."""

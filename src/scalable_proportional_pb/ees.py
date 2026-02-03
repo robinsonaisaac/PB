@@ -103,7 +103,7 @@ def ees_with_outcome(
                     
                     # Check if this is better than current best
                     # Tie-break by larger project id
-                    if bpb > best_bpb or (bpb == best_bpb and best_project_id is not None and p_id > best_project_id):
+                    if bpb > best_bpb or (bpb == best_bpb and best_project_id is not None and p_id < best_project_id):
                         best_bpb = bpb
                         best_project_id = p_id
                         best_payers = payers

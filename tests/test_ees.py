@@ -12,7 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from scalable_proportional_pb.types import Election, Project, EESOutcome
-from scalable_proportional_pb.ees import ees, ees_with_outcome, cardinal_utility, cost_utility
+from scalable_proportional_pb.ees import ees_with_outcome, cardinal_utility, cost_utility
 
 
 def make_election(
@@ -76,17 +76,17 @@ class TestEESBasic:
         assert outcome.selected == set()
     
     def test_tie_breaking_by_project_id(self):
-        """When BpB is equal, larger project id wins."""
+        """When BpB is equal, smaller project id wins."""
         e = make_election(
             project_costs={"a": 10, "b": 10},
             approvals={0: ["a", "b"], 1: ["a", "b"]},
             budget=20,
         )
         outcome = ees_with_outcome(e)
-        # Both have same BpB, "b" > "a" so "b" selected first
-        assert "b" in outcome.selected
+        # Both have same BpB, "a" < "b" so "a" selected first
+        assert "a" in outcome.selected
         # Check selection order
-        assert outcome.selection_order[0][0] == "b"
+        assert outcome.selection_order[0][0] == "a"
 
 
 class TestEESInvariants:
@@ -194,9 +194,9 @@ class TestEESCostUtility:
         assert cardinal_outcome.selection_order[0][0] == "cheap"
         
         # Cost: both have BpB = 2
-        # Tie-break by id: "expensive" > "cheap"
+        # Tie-break by id: "cheap" < "expensive"
         cost_outcome = ees_with_outcome(e, cost_utility)
-        assert cost_outcome.selection_order[0][0] == "expensive"
+        assert cost_outcome.selection_order[0][0] == "cheap"
 
 
 class TestEESPaperExample:
