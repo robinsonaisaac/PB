@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/us_stanford-dataset_pb-adler-2021-students_vote-knapsacks.pb
+Array task ID: 691
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_pb-adler-2021-students_vote-knapsacks.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/us_stanford-dataset_pb-adler-2021-students_vote-knapsacks.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/us_stanford-dataset_pb-adler-2021-students_vote-knapsacks.csv
+
+Summary:
+  Highest efficiency: 0.9730
+  Projects selected: 14
+  Budget increases: 14700

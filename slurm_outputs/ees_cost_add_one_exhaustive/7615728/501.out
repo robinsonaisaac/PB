@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2020_ursus.pb
+Array task ID: 501
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2020_ursus.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_warszawa_2020_ursus.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_warszawa_2020_ursus.csv
+
+Summary:
+  Highest efficiency: 0.9550
+  Projects selected: 27
+  Budget increases: 283

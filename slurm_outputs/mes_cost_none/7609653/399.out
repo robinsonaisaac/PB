@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2018_stare-wlochy.pb
+Array task ID: 399
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_stare-wlochy.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_warszawa_2018_stare-wlochy.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_warszawa_2018_stare-wlochy.csv
+
+Summary:
+  Highest efficiency: 0.5577
+  Projects selected: 9
+  Budget increases: 0

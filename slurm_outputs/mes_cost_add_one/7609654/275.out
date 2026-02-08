@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2017_kobialka-augustow-brzeziny-grodzisk-lewandow-annopol-zeran.pb
+Array task ID: 275
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2017_kobialka-augustow-brzeziny-grodzisk-lewandow-annopol-zeran.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/poland_warszawa_2017_kobialka-augustow-brzeziny-grodzisk-lewandow-annopol-zeran.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/poland_warszawa_2017_kobialka-augustow-brzeziny-grodzisk-lewandow-annopol-zeran.csv
+
+Summary:
+  Highest efficiency: 0.9979
+  Projects selected: 22
+  Budget increases: 48

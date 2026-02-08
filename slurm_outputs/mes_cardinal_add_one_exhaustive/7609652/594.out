@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2025_targowek.pb
+Array task ID: 594
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2025_targowek.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one_exhaustive/poland_warszawa_2025_targowek.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one_exhaustive/poland_warszawa_2025_targowek.csv
+
+Summary:
+  Highest efficiency: 0.9457
+  Projects selected: 52
+  Budget increases: 703

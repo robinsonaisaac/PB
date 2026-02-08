@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2018_praga-poludnie.pb
+Array task ID: 379
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_praga-poludnie.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_warszawa_2018_praga-poludnie.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_warszawa_2018_praga-poludnie.csv
+
+Summary:
+  Highest efficiency: 0.9270
+  Projects selected: 17
+  Budget increases: 9701

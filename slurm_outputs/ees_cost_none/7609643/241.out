@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2024_zdrowie-mania.pb
+Array task ID: 241
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2024_zdrowie-mania.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_lodz_2024_zdrowie-mania.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_lodz_2024_zdrowie-mania.csv
+
+Summary:
+  Highest efficiency: 0.3168
+  Projects selected: 4
+  Budget increases: 0

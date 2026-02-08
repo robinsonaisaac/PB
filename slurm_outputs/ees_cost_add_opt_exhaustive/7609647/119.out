@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2020_radogoszcz.pb
+Array task ID: 119
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2020_radogoszcz.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_lodz_2020_radogoszcz.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_lodz_2020_radogoszcz.csv
+
+Summary:
+  Highest efficiency: 0.5897
+  Projects selected: 13
+  Budget increases: 348

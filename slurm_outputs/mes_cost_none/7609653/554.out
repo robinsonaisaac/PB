@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2023_rembertow.pb
+Array task ID: 554
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2023_rembertow.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_warszawa_2023_rembertow.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_warszawa_2023_rembertow.csv
+
+Summary:
+  Highest efficiency: 0.8019
+  Projects selected: 13
+  Budget increases: 0

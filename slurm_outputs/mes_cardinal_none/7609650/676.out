@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_wroclaw_2016_.pb
+Array task ID: 676
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_wroclaw_2016_.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_wroclaw_2016_.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_wroclaw_2016_.csv
+
+Summary:
+  Highest efficiency: 0.0222
+  Projects selected: 1
+  Budget increases: 0

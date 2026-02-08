@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2017_rejon-b.pb
+Array task ID: 296
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2017_rejon-b.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one/poland_warszawa_2017_rejon-b.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one/poland_warszawa_2017_rejon-b.csv
+
+Summary:
+  Highest efficiency: 0.9544
+  Projects selected: 23
+  Budget increases: 189

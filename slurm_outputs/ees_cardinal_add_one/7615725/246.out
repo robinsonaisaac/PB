@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_poznan_2023_13-jezyce-sw-lazarz.pb
+Array task ID: 246
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_poznan_2023_13-jezyce-sw-lazarz.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one/poland_poznan_2023_13-jezyce-sw-lazarz.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one/poland_poznan_2023_13-jezyce-sw-lazarz.csv
+
+Summary:
+  Highest efficiency: 0.8679
+  Projects selected: 4
+  Budget increases: 358

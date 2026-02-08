@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2026_rembertow.pb
+Array task ID: 643
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_rembertow.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one/poland_warszawa_2026_rembertow.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one/poland_warszawa_2026_rembertow.csv
+
+Summary:
+  Highest efficiency: 0.9332
+  Projects selected: 27
+  Budget increases: 61

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2020_im-montwilla-mireckiego.pb
+Array task ID: 107
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2020_im-montwilla-mireckiego.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/none/poland_lodz_2020_im-montwilla-mireckiego.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/none/poland_lodz_2020_im-montwilla-mireckiego.csv
+
+Summary:
+  Highest efficiency: 0.3337
+  Projects selected: 7
+  Budget increases: 0

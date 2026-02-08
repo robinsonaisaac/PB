@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2017_wysokie-okecie.pb
+Array task ID: 331
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2017_wysokie-okecie.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_warszawa_2017_wysokie-okecie.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_warszawa_2017_wysokie-okecie.csv
+
+Summary:
+  Highest efficiency: 0.9407
+  Projects selected: 18
+  Budget increases: 339

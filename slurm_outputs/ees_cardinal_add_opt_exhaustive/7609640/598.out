@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2025_wesola.pb
+Array task ID: 598
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2025_wesola.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt_exhaustive/poland_warszawa_2025_wesola.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt_exhaustive/poland_warszawa_2025_wesola.csv
+
+Summary:
+  Highest efficiency: 0.9486
+  Projects selected: 23
+  Budget increases: 2723

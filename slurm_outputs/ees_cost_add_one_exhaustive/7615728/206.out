@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2024_andrzejow.pb
+Array task ID: 206
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2024_andrzejow.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_lodz_2024_andrzejow.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_lodz_2024_andrzejow.csv
+
+Summary:
+  Highest efficiency: 0.2132
+  Projects selected: 3
+  Budget increases: 801

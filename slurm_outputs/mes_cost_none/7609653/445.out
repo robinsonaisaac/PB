@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2019_obszar-ii-stara-praga-ze-szmulowizna-z-michalowem.pb
+Array task ID: 445
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2019_obszar-ii-stara-praga-ze-szmulowizna-z-michalowem.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_warszawa_2019_obszar-ii-stara-praga-ze-szmulowizna-z-michalowem.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_warszawa_2019_obszar-ii-stara-praga-ze-szmulowizna-z-michalowem.csv
+
+Summary:
+  Highest efficiency: 0.5283
+  Projects selected: 8
+  Budget increases: 0

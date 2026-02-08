@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2020_baluty-zachodnie.pb
+Array task ID: 103
+slurmstepd: error: *** JOB 7614099 ON qnode1252 CANCELLED AT 2026-02-02T23:23:04 ***

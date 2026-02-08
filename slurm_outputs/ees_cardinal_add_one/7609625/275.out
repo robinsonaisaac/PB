@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2017_kobialka-augustow-brzeziny-grodzisk-lewandow-annopol-zeran.pb
+Array task ID: 275
+slurmstepd: error: *** JOB 7613218 ON qnode1161 CANCELLED AT 2026-02-02T23:18:59 ***

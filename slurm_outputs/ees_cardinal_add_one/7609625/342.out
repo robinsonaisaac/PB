@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2018_bialoleka-obszar-3.pb
+Array task ID: 342
+slurmstepd: error: *** JOB 7613285 ON qnode1252 CANCELLED AT 2026-02-02T23:18:59 ***

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt-skip
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2017_saska-kepa.pb
+Array task ID: 305
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2017_saska-kepa.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt-skip
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip_exhaustive/poland_warszawa_2017_saska-kepa.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip_exhaustive/poland_warszawa_2017_saska-kepa.csv
+
+Summary:
+  Highest efficiency: 0.9659
+  Projects selected: 15
+  Budget increases: 32

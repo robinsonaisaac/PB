@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2022_.pb
+Array task ID: 153
+slurmstepd: error: *** JOB 7614149 ON qnode1242 CANCELLED AT 2026-02-02T23:23:04 ***

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/us_stanford-dataset_2023-youth-power-pb-lb_vote-approvals.pb
+Array task ID: 686
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_2023-youth-power-pb-lb_vote-approvals.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/none/us_stanford-dataset_2023-youth-power-pb-lb_vote-approvals.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/none/us_stanford-dataset_2023-youth-power-pb-lb_vote-approvals.csv
+
+Summary:
+  Highest efficiency: 0.2217
+  Projects selected: 4
+  Budget increases: 0

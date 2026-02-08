@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2022_bielany.pb
+Array task ID: 529
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2022_bielany.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one_exhaustive/poland_warszawa_2022_bielany.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one_exhaustive/poland_warszawa_2022_bielany.csv
+
+Summary:
+  Highest efficiency: 0.9981
+  Projects selected: 42
+  Budget increases: 1197

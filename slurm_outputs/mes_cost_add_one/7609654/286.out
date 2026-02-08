@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2017_nowe-wlochy.pb
+Array task ID: 286
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2017_nowe-wlochy.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/poland_warszawa_2017_nowe-wlochy.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/poland_warszawa_2017_nowe-wlochy.csv
+
+Summary:
+  Highest efficiency: 0.8460
+  Projects selected: 10
+  Budget increases: 62

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2024_nad-nerem.pb
+Array task ID: 222
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2024_nad-nerem.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one_exhaustive/poland_lodz_2024_nad-nerem.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one_exhaustive/poland_lodz_2024_nad-nerem.csv
+
+Summary:
+  Highest efficiency: 0.8789
+  Projects selected: 4
+  Budget increases: 313

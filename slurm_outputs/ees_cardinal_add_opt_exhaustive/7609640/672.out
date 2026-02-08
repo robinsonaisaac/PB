@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2026_wyczolki-grabow-jeziorki-polnocne-jeziorki-poludniowe-pyry-dabrowka-skarpa-powsinska-teren-wydzielony-rezerwat-las-kabacki.pb
+Array task ID: 672
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_wyczolki-grabow-jeziorki-polnocne-jeziorki-poludniowe-pyry-dabrowka-skarpa-powsinska-teren-wydzielony-rezerwat-las-kabacki.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt_exhaustive/poland_warszawa_2026_wyczolki-grabow-jeziorki-polnocne-jeziorki-poludniowe-pyry-dabrowka-skarpa-powsinska-teren-wydzielony-rezerwat-las-kabacki.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt_exhaustive/poland_warszawa_2026_wyczolki-grabow-jeziorki-polnocne-jeziorki-poludniowe-pyry-dabrowka-skarpa-powsinska-teren-wydzielony-rezerwat-las-kabacki.csv
+
+Summary:
+  Highest efficiency: 0.8419
+  Projects selected: 8
+  Budget increases: 111

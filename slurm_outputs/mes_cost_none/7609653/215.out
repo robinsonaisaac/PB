@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2024_julianow-marysin-rogi.pb
+Array task ID: 215
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2024_julianow-marysin-rogi.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_lodz_2024_julianow-marysin-rogi.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_lodz_2024_julianow-marysin-rogi.csv
+
+Summary:
+  Highest efficiency: 0.4185
+  Projects selected: 11
+  Budget increases: 0

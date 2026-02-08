@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2024_nr-33.pb
+Array task ID: 224
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2024_nr-33.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_lodz_2024_nr-33.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_lodz_2024_nr-33.csv
+
+Summary:
+  Highest efficiency: 0.9324
+  Projects selected: 6
+  Budget increases: 7077

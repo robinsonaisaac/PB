@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2017_wysokie-okecie.pb
+Array task ID: 331
+slurmstepd: error: *** JOB 7614327 ON qnode3091 CANCELLED AT 2026-02-02T23:23:04 ***

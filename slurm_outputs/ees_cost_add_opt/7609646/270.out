@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2017_grochow-centrum.pb
+Array task ID: 270
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2017_grochow-centrum.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt/poland_warszawa_2017_grochow-centrum.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt/poland_warszawa_2017_grochow-centrum.csv
+
+Summary:
+  Highest efficiency: 0.9191
+  Projects selected: 9
+  Budget increases: 55

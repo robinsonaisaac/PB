@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2017_wrzeciono-mlociny.pb
+Array task ID: 330
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2017_wrzeciono-mlociny.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_warszawa_2017_wrzeciono-mlociny.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_warszawa_2017_wrzeciono-mlociny.csv
+
+Summary:
+  Highest efficiency: 0.9968
+  Projects selected: 11
+  Budget increases: 401

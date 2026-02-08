@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2026_kolo-ulrychow.pb
+Array task ID: 620
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_kolo-ulrychow.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_warszawa_2026_kolo-ulrychow.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_warszawa_2026_kolo-ulrychow.csv
+
+Summary:
+  Highest efficiency: 0.9507
+  Projects selected: 14
+  Budget increases: 12

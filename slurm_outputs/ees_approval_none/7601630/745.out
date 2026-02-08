@@ -1,0 +1,12 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2020_koziny.pb
+Traceback (most recent call last):
+  File "run_pb.py", line 28, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'

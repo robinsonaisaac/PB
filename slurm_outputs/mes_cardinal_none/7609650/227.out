@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2024_piastow-kurak.pb
+Array task ID: 227
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2024_piastow-kurak.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_lodz_2024_piastow-kurak.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_lodz_2024_piastow-kurak.csv
+
+Summary:
+  Highest efficiency: 0.3473
+  Projects selected: 6
+  Budget increases: 0

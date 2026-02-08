@@ -1,0 +1,9 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2025_.pb
+Array task ID: 589

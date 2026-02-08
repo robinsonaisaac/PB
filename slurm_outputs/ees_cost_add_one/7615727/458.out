@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2019_rejon-polnocno-zachodni.pb
+Array task ID: 458
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2019_rejon-polnocno-zachodni.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one/poland_warszawa_2019_rejon-polnocno-zachodni.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one/poland_warszawa_2019_rejon-polnocno-zachodni.csv
+
+Summary:
+  Highest efficiency: 0.9904
+  Projects selected: 11
+  Budget increases: 123

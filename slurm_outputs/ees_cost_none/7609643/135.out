@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2022_baluty-doly.pb
+Array task ID: 135
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2022_baluty-doly.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_lodz_2022_baluty-doly.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_lodz_2022_baluty-doly.csv
+
+Summary:
+  Highest efficiency: 0.2658
+  Projects selected: 13
+  Budget increases: 0

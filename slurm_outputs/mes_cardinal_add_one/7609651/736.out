@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/us_stanford-dataset_pb-greensboro-district-5-2019_vote-knapsacks.pb
+Array task ID: 736
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_pb-greensboro-district-5-2019_vote-knapsacks.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one/us_stanford-dataset_pb-greensboro-district-5-2019_vote-knapsacks.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one/us_stanford-dataset_pb-greensboro-district-5-2019_vote-knapsacks.csv
+
+Summary:
+  Highest efficiency: 0.9800
+  Projects selected: 4
+  Budget increases: 93

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2023_olechow-janow.pb
+Array task ID: 188
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2023_olechow-janow.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_lodz_2023_olechow-janow.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_lodz_2023_olechow-janow.csv
+
+Summary:
+  Highest efficiency: 0.8236
+  Projects selected: 8
+  Budget increases: 5

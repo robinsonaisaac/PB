@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2026_bemowo-lotnisko-fort-bema-gorce.pb
+Array task ID: 603
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_bemowo-lotnisko-fort-bema-gorce.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one/poland_warszawa_2026_bemowo-lotnisko-fort-bema-gorce.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one/poland_warszawa_2026_bemowo-lotnisko-fort-bema-gorce.csv
+
+Summary:
+  Highest efficiency: 0.9823
+  Projects selected: 16
+  Budget increases: 65

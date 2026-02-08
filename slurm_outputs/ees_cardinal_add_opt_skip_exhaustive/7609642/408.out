@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt-skip
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2018_ursynow-wysoki-poludniowy.pb
+Array task ID: 408
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_ursynow-wysoki-poludniowy.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt-skip
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip_exhaustive/poland_warszawa_2018_ursynow-wysoki-poludniowy.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip_exhaustive/poland_warszawa_2018_ursynow-wysoki-poludniowy.csv
+
+Summary:
+  Highest efficiency: 0.9691
+  Projects selected: 41
+  Budget increases: 45

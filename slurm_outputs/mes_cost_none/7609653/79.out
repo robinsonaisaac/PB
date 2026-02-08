@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_gdynia_2020_leszczynki-small.pb
+Array task ID: 79
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_gdynia_2020_leszczynki-small.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_gdynia_2020_leszczynki-small.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_gdynia_2020_leszczynki-small.csv
+
+Summary:
+  Highest efficiency: 0.3201
+  Projects selected: 1
+  Budget increases: 0

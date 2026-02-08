@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2017_zielona-grzybowa.pb
+Array task ID: 334
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2017_zielona-grzybowa.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_warszawa_2017_zielona-grzybowa.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_warszawa_2017_zielona-grzybowa.csv
+
+Summary:
+  Highest efficiency: 0.5317
+  Projects selected: 4
+  Budget increases: 0

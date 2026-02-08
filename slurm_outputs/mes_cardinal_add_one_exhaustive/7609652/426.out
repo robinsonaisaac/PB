@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2019_goclaw.pb
+Array task ID: 426
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2019_goclaw.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one_exhaustive/poland_warszawa_2019_goclaw.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one_exhaustive/poland_warszawa_2019_goclaw.csv
+
+Summary:
+  Highest efficiency: 0.7719
+  Projects selected: 24
+  Budget increases: 184

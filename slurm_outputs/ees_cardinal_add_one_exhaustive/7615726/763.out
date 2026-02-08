@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-6_vote-approvals.pb
+Array task ID: 763
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-6_vote-approvals.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-6_vote-approvals.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2018-district-6_vote-approvals.csv
+
+Summary:
+  Highest efficiency: 0.8428
+  Projects selected: 7
+  Budget increases: 390

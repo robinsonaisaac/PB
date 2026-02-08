@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2024_katedralna.pb
+Array task ID: 217
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2024_katedralna.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_lodz_2024_katedralna.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_lodz_2024_katedralna.csv
+
+Summary:
+  Highest efficiency: 0.9998
+  Projects selected: 14
+  Budget increases: 685

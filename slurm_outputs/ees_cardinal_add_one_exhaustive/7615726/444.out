@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2019_obszar-iii-powsin-kepa-latoszkowa-zamosc-latoszki.pb
+Array task ID: 444
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2019_obszar-iii-powsin-kepa-latoszkowa-zamosc-latoszki.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_warszawa_2019_obszar-iii-powsin-kepa-latoszkowa-zamosc-latoszki.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_warszawa_2019_obszar-iii-powsin-kepa-latoszkowa-zamosc-latoszki.csv
+
+Summary:
+  Highest efficiency: 0.8693
+  Projects selected: 5
+  Budget increases: 201

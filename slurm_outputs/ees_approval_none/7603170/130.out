@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2020_zarzew.pb
+Array task ID: 130
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2020_zarzew.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_lodz_2020_zarzew.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_lodz_2020_zarzew.csv
+
+Summary:
+  Highest efficiency: 0.1253
+  Projects selected: 5
+  Budget increases: 0

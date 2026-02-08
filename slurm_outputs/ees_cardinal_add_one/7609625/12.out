@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/France_Toulouse_2022_20_-_Arenes_Romaines_Ancely_Saint-Martin_du_Touch_Purpan.pb
+Array task ID: 12
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/France_Toulouse_2022_20_-_Arenes_Romaines_Ancely_Saint-Martin_du_Touch_Purpan.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one/France_Toulouse_2022_20_-_Arenes_Romaines_Ancely_Saint-Martin_du_Touch_Purpan.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one/France_Toulouse_2022_20_-_Arenes_Romaines_Ancely_Saint-Martin_du_Touch_Purpan.csv
+
+Summary:
+  Highest efficiency: 0.6625
+  Projects selected: 4
+  Budget increases: 1935

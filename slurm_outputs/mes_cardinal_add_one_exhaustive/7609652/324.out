@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2017_ursynow-wysoki-poludniowy.pb
+Array task ID: 324
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2017_ursynow-wysoki-poludniowy.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one_exhaustive/poland_warszawa_2017_ursynow-wysoki-poludniowy.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one_exhaustive/poland_warszawa_2017_ursynow-wysoki-poludniowy.csv
+
+Summary:
+  Highest efficiency: 0.8819
+  Projects selected: 12
+  Budget increases: 250

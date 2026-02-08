@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2019_obszar-2-sady-zoliborskie-zatrasie-rudawka.pb
+Array task ID: 439
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2019_obszar-2-sady-zoliborskie-zatrasie-rudawka.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_warszawa_2019_obszar-2-sady-zoliborskie-zatrasie-rudawka.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_warszawa_2019_obszar-2-sady-zoliborskie-zatrasie-rudawka.csv
+
+Summary:
+  Highest efficiency: 0.8667
+  Projects selected: 11
+  Budget increases: 9

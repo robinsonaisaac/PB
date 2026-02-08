@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2019_ursynow-poludniowy.pb
+Array task ID: 481
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2019_ursynow-poludniowy.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_warszawa_2019_ursynow-poludniowy.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_warszawa_2019_ursynow-poludniowy.csv
+
+Summary:
+  Highest efficiency: 0.4233
+  Projects selected: 17
+  Budget increases: 0

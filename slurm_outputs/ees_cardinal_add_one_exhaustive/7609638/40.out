@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/netherlands_amsterdam_491_.pb
+Array task ID: 40
+slurmstepd: error: *** JOB 7614036 ON qnode0460 CANCELLED AT 2026-02-02T23:23:04 ***

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2018_mlynow.pb
+Array task ID: 364
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_mlynow.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one_exhaustive/poland_warszawa_2018_mlynow.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one_exhaustive/poland_warszawa_2018_mlynow.csv
+
+Summary:
+  Highest efficiency: 0.7325
+  Projects selected: 13
+  Budget increases: 1060

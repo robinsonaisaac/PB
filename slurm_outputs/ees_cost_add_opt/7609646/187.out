@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2023_nr-33.pb
+Array task ID: 187
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2023_nr-33.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt/poland_lodz_2023_nr-33.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt/poland_lodz_2023_nr-33.csv
+
+Summary:
+  Highest efficiency: 0.8755
+  Projects selected: 5
+  Budget increases: 19

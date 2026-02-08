@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2026_brodno-podgrodzie-zacisze.pb
+Array task ID: 610
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_brodno-podgrodzie-zacisze.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/poland_warszawa_2026_brodno-podgrodzie-zacisze.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/poland_warszawa_2026_brodno-podgrodzie-zacisze.csv
+
+Summary:
+  Highest efficiency: 0.9955
+  Projects selected: 3
+  Budget increases: 46

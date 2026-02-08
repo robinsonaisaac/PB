@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_gdynia_2020_witomino-large.pb
+Array task ID: 97
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_gdynia_2020_witomino-large.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_gdynia_2020_witomino-large.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_gdynia_2020_witomino-large.csv
+
+Summary:
+  Highest efficiency: 0.2357
+  Projects selected: 2
+  Budget increases: 0

@@ -1,0 +1,9 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2026_.pb
+Array task ID: 636

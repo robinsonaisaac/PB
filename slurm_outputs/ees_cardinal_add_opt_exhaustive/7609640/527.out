@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2022_bemowo.pb
+Array task ID: 527
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2022_bemowo.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt_exhaustive/poland_warszawa_2022_bemowo.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt_exhaustive/poland_warszawa_2022_bemowo.csv
+
+Summary:
+  Highest efficiency: 0.9920
+  Projects selected: 44
+  Budget increases: 2766

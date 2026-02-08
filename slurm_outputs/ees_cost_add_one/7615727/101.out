@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2020_baluty-centrum.pb
+Array task ID: 101
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2020_baluty-centrum.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one/poland_lodz_2020_baluty-centrum.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one/poland_lodz_2020_baluty-centrum.csv
+
+Summary:
+  Highest efficiency: 0.8940
+  Projects selected: 12
+  Budget increases: 154

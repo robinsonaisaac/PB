@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2026_powisle-solec-ujazdow.pb
+Array task ID: 639
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_powisle-solec-ujazdow.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_warszawa_2026_powisle-solec-ujazdow.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_warszawa_2026_powisle-solec-ujazdow.csv
+
+Summary:
+  Highest efficiency: 0.8762
+  Projects selected: 6
+  Budget increases: 182

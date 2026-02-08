@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2026_golabki-szamoty-niedzwiadek.pb
+Array task ID: 616
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_golabki-szamoty-niedzwiadek.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_warszawa_2026_golabki-szamoty-niedzwiadek.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_warszawa_2026_golabki-szamoty-niedzwiadek.csv
+
+Summary:
+  Highest efficiency: 0.5434
+  Projects selected: 13
+  Budget increases: 0

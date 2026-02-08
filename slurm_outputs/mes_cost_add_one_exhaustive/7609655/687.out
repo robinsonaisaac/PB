@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/us_stanford-dataset_cnycf-participatory-budgeting-project-2023_vote-approvals.pb
+Array task ID: 687
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_cnycf-participatory-budgeting-project-2023_vote-approvals.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one_exhaustive/us_stanford-dataset_cnycf-participatory-budgeting-project-2023_vote-approvals.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one_exhaustive/us_stanford-dataset_cnycf-participatory-budgeting-project-2023_vote-approvals.csv
+
+Summary:
+  Highest efficiency: 1.0000
+  Projects selected: 1
+  Budget increases: 732

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2024_wzniesien-lodzkich.pb
+Array task ID: 239
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2024_wzniesien-lodzkich.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_lodz_2024_wzniesien-lodzkich.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_lodz_2024_wzniesien-lodzkich.csv
+
+Summary:
+  Highest efficiency: 0.7512
+  Projects selected: 3
+  Budget increases: 3

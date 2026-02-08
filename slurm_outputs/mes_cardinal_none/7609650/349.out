@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2018_chrzanow-jelonki-polnocne-jelonki-poludniowe.pb
+Array task ID: 349
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_chrzanow-jelonki-polnocne-jelonki-poludniowe.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_warszawa_2018_chrzanow-jelonki-polnocne-jelonki-poludniowe.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_warszawa_2018_chrzanow-jelonki-polnocne-jelonki-poludniowe.csv
+
+Summary:
+  Highest efficiency: 0.4800
+  Projects selected: 15
+  Budget increases: 0

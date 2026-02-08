@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2026_ursynow-polnocny-ursynow-centrum-stary-sluzew-stary-imielin.pb
+Array task ID: 663
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_ursynow-polnocny-ursynow-centrum-stary-sluzew-stary-imielin.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_warszawa_2026_ursynow-polnocny-ursynow-centrum-stary-sluzew-stary-imielin.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/none/poland_warszawa_2026_ursynow-polnocny-ursynow-centrum-stary-sluzew-stary-imielin.csv
+
+Summary:
+  Highest efficiency: 0.5291
+  Projects selected: 12
+  Budget increases: 0

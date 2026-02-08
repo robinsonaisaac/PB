@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/netherlands_amsterdam_509_.pb
+Array task ID: 42
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/netherlands_amsterdam_509_.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/netherlands_amsterdam_509_.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/netherlands_amsterdam_509_.csv
+
+Summary:
+  Highest efficiency: 0.9325
+  Projects selected: 16
+  Budget increases: 8536

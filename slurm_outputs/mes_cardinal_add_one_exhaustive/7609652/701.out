@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-approvals.pb
+Array task ID: 701
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-approvals.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one_exhaustive/us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-approvals.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one_exhaustive/us_stanford-dataset_pb-chicago-33rd-ward-2020_vote-approvals.csv
+
+Summary:
+  Highest efficiency: 0.5450
+  Projects selected: 7
+  Budget increases: 62

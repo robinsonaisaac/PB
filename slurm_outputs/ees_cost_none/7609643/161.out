@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2022_stary-widzew.pb
+Array task ID: 161
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2022_stary-widzew.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_lodz_2022_stary-widzew.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_lodz_2022_stary-widzew.csv
+
+Summary:
+  Highest efficiency: 0.3015
+  Projects selected: 10
+  Budget increases: 0

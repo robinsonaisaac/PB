@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/France_Toulouse_2022_16_-_Fontaine-Lestang_Arenes_Bagatelle_Papus_Tabar_Bordelongue_Mermoz_La_Faourette.pb
+Array task ID: 7
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/France_Toulouse_2022_16_-_Fontaine-Lestang_Arenes_Bagatelle_Papus_Tabar_Bordelongue_Mermoz_La_Faourette.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt_exhaustive/France_Toulouse_2022_16_-_Fontaine-Lestang_Arenes_Bagatelle_Papus_Tabar_Bordelongue_Mermoz_La_Faourette.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt_exhaustive/France_Toulouse_2022_16_-_Fontaine-Lestang_Arenes_Bagatelle_Papus_Tabar_Bordelongue_Mermoz_La_Faourette.csv
+
+Summary:
+  Highest efficiency: 0.8725
+  Projects selected: 5
+  Budget increases: 28

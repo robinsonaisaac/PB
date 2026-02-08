@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2023_zdrowie-mania.pb
+Array task ID: 204
+slurmstepd: error: *** JOB 7614200 ON qnode1260 CANCELLED AT 2026-02-02T23:23:04 ***

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2018_zielony-ursynow.pb
+Array task ID: 416
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_zielony-ursynow.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt/poland_warszawa_2018_zielony-ursynow.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt/poland_warszawa_2018_zielony-ursynow.csv
+
+Summary:
+  Highest efficiency: 0.8830
+  Projects selected: 15
+  Budget increases: 442

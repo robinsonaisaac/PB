@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2019_obszar-3-kobialka-augustow-brzeziny-grodzisk-lewandow.pb
+Array task ID: 440
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2019_obszar-3-kobialka-augustow-brzeziny-grodzisk-lewandow.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt/poland_warszawa_2019_obszar-3-kobialka-augustow-brzeziny-grodzisk-lewandow.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt/poland_warszawa_2019_obszar-3-kobialka-augustow-brzeziny-grodzisk-lewandow.csv
+
+Summary:
+  Highest efficiency: 0.9638
+  Projects selected: 31
+  Budget increases: 1272

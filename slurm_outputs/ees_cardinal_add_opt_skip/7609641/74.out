@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_gdynia_2020_kamienna-gora-large.pb
+Array task ID: 74
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_gdynia_2020_kamienna-gora-large.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip/poland_gdynia_2020_kamienna-gora-large.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip/poland_gdynia_2020_kamienna-gora-large.csv
+
+Summary:
+  Highest efficiency: 0.8785
+  Projects selected: 2
+  Budget increases: 2

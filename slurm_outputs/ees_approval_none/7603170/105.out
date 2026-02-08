@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2020_chojny.pb
+Array task ID: 105
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2020_chojny.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_lodz_2020_chojny.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_lodz_2020_chojny.csv
+
+Summary:
+  Highest efficiency: 0.2420
+  Projects selected: 6
+  Budget increases: 0

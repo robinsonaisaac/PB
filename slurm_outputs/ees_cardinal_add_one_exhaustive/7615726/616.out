@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2026_golabki-szamoty-niedzwiadek.pb
+Array task ID: 616
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_golabki-szamoty-niedzwiadek.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_warszawa_2026_golabki-szamoty-niedzwiadek.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_warszawa_2026_golabki-szamoty-niedzwiadek.csv
+
+Summary:
+  Highest efficiency: 0.9083
+  Projects selected: 18
+  Budget increases: 609

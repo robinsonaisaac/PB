@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/netherlands_amsterdam_289_.pb
+Array task ID: 30
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/netherlands_amsterdam_289_.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/netherlands_amsterdam_289_.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/netherlands_amsterdam_289_.csv
+
+Summary:
+  Highest efficiency: 0.2082
+  Projects selected: 4
+  Budget increases: 0

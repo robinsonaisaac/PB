@@ -1,0 +1,9 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/netherlands_amsterdam_631_.pb
+Array task ID: 56

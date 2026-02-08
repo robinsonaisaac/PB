@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt-skip
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-knapsacks.pb
+Array task ID: 772
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-knapsacks.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt-skip
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip_exhaustive/us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-knapsacks.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip_exhaustive/us_stanford-dataset_your-voice-your-choice-parks-and-streets-seattle-2019-district-5_vote-knapsacks.csv
+
+Summary:
+  Highest efficiency: 0.7592
+  Projects selected: 4
+  Budget increases: 6

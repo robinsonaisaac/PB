@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/netherlands_amsterdam_628_.pb
+Array task ID: 55
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/netherlands_amsterdam_628_.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/netherlands_amsterdam_628_.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/netherlands_amsterdam_628_.csv
+
+Summary:
+  Highest efficiency: 0.9957
+  Projects selected: 25
+  Budget increases: 29

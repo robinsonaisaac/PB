@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_wroclaw_2016_.pb
+Array task ID: 676
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_wroclaw_2016_.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip/poland_wroclaw_2016_.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip/poland_wroclaw_2016_.csv
+
+Summary:
+  Highest efficiency: 0.9556
+  Projects selected: 10
+  Budget increases: 13

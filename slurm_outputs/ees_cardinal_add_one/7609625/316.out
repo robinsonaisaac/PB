@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2017_tarchomin-nowodwory-piekielko.pb
+Array task ID: 316
+slurmstepd: error: *** JOB 7613259 ON qnode1147 CANCELLED AT 2026-02-02T23:18:59 ***

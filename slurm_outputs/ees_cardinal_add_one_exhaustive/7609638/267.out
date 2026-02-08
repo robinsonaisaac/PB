@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2017_czyste-mirow.pb
+Array task ID: 267
+slurmstepd: error: *** JOB 7614263 ON qnode3071 CANCELLED AT 2026-02-02T23:23:04 ***

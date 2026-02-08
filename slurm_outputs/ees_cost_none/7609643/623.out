@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2026_marymont-potok-stary-zoliborz.pb
+Array task ID: 623
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_marymont-potok-stary-zoliborz.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_warszawa_2026_marymont-potok-stary-zoliborz.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/poland_warszawa_2026_marymont-potok-stary-zoliborz.csv
+
+Summary:
+  Highest efficiency: 0.5662
+  Projects selected: 15
+  Budget increases: 0

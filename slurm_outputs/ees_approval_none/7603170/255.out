@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_poznan_2023_9-stare-miasto.pb
+Array task ID: 255
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_poznan_2023_9-stare-miasto.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_poznan_2023_9-stare-miasto.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_poznan_2023_9-stare-miasto.csv
+
+Summary:
+  Highest efficiency: 0.0000
+  Projects selected: 0
+  Budget increases: 0

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2024_stoki-sikawa-podgorze.pb
+Array task ID: 235
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2024_stoki-sikawa-podgorze.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip/poland_lodz_2024_stoki-sikawa-podgorze.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip/poland_lodz_2024_stoki-sikawa-podgorze.csv
+
+Summary:
+  Highest efficiency: 0.9363
+  Projects selected: 15
+  Budget increases: 13

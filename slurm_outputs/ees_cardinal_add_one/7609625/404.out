@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2018_ulrychow-odolany.pb
+Array task ID: 404
+slurmstepd: error: *** JOB 7613347 ON qnode3084 CANCELLED AT 2026-02-02T23:18:59 ***

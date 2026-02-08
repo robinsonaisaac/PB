@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/France_Toulouse_2022_18_-_Lardenne_Pradettes_Basso-Cambo.pb
+Array task ID: 9
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/France_Toulouse_2022_18_-_Lardenne_Pradettes_Basso-Cambo.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/France_Toulouse_2022_18_-_Lardenne_Pradettes_Basso-Cambo.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/France_Toulouse_2022_18_-_Lardenne_Pradettes_Basso-Cambo.csv
+
+Summary:
+  Highest efficiency: 0.9067
+  Projects selected: 5
+  Budget increases: 105

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/France_Toulouse_2022_13_-_Rangueil_Sauzelong_Jules-Julien_Pech-David_Pouvourville.pb
+Array task ID: 4
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/France_Toulouse_2022_13_-_Rangueil_Sauzelong_Jules-Julien_Pech-David_Pouvourville.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/France_Toulouse_2022_13_-_Rangueil_Sauzelong_Jules-Julien_Pech-David_Pouvourville.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/France_Toulouse_2022_13_-_Rangueil_Sauzelong_Jules-Julien_Pech-David_Pouvourville.csv
+
+Summary:
+  Highest efficiency: 0.1280
+  Projects selected: 2
+  Budget increases: 0

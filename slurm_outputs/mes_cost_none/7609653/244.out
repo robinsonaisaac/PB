@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_poznan_2023_11-fabianowo-kotowo-gorczyn-junikowo-kwiatowe-lawica.pb
+Array task ID: 244
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_poznan_2023_11-fabianowo-kotowo-gorczyn-junikowo-kwiatowe-lawica.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_poznan_2023_11-fabianowo-kotowo-gorczyn-junikowo-kwiatowe-lawica.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/poland_poznan_2023_11-fabianowo-kotowo-gorczyn-junikowo-kwiatowe-lawica.csv
+
+Summary:
+  Highest efficiency: 0.4533
+  Projects selected: 2
+  Budget increases: 0

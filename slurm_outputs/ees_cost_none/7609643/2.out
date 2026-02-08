@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/France_Toulouse_2022_11_-_Bonhoure_Guilhemery_Chateau_de_lHers_Limayrac_Cote_Pavee.pb
+Array task ID: 2
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/France_Toulouse_2022_11_-_Bonhoure_Guilhemery_Chateau_de_lHers_Limayrac_Cote_Pavee.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/France_Toulouse_2022_11_-_Bonhoure_Guilhemery_Chateau_de_lHers_Limayrac_Cote_Pavee.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/none/France_Toulouse_2022_11_-_Bonhoure_Guilhemery_Chateau_de_lHers_Limayrac_Cote_Pavee.csv
+
+Summary:
+  Highest efficiency: 0.1600
+  Projects selected: 3
+  Budget increases: 0

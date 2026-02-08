@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2026_las-bielanski-marymont-ruda-marymont-kaskada.pb
+Array task ID: 621
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_las-bielanski-marymont-ruda-marymont-kaskada.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_warszawa_2026_las-bielanski-marymont-ruda-marymont-kaskada.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_warszawa_2026_las-bielanski-marymont-ruda-marymont-kaskada.csv
+
+Summary:
+  Highest efficiency: 0.9928
+  Projects selected: 5
+  Budget increases: 126

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2018_obszar-i-nowa-praga-z-pelcowizna.pb
+Array task ID: 376
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_obszar-i-nowa-praga-z-pelcowizna.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one/poland_warszawa_2018_obszar-i-nowa-praga-z-pelcowizna.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one/poland_warszawa_2018_obszar-i-nowa-praga-z-pelcowizna.csv
+
+Summary:
+  Highest efficiency: 0.9525
+  Projects selected: 12
+  Budget increases: 120

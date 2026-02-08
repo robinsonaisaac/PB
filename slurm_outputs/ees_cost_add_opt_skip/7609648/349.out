@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2018_chrzanow-jelonki-polnocne-jelonki-poludniowe.pb
+Array task ID: 349
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_chrzanow-jelonki-polnocne-jelonki-poludniowe.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_warszawa_2018_chrzanow-jelonki-polnocne-jelonki-poludniowe.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/poland_warszawa_2018_chrzanow-jelonki-polnocne-jelonki-poludniowe.csv
+
+Summary:
+  Highest efficiency: 0.8874
+  Projects selected: 18
+  Budget increases: 59

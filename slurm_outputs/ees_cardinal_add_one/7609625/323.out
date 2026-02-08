@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2017_ursynow-wysoki-polnocny.pb
+Array task ID: 323
+slurmstepd: error: *** JOB 7613266 ON qnode1257 CANCELLED AT 2026-02-02T23:18:59 ***

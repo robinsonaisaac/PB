@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_poznan_2023_10-swierczewo-wilda-zielony-debiec.pb
+Array task ID: 243
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_poznan_2023_10-swierczewo-wilda-zielony-debiec.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_poznan_2023_10-swierczewo-wilda-zielony-debiec.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/poland_poznan_2023_10-swierczewo-wilda-zielony-debiec.csv
+
+Summary:
+  Highest efficiency: 0.9610
+  Projects selected: 3
+  Budget increases: 1603

@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2019_marysin-wawerski-polnocny.pb
+Array task ID: 431
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2019_marysin-wawerski-polnocny.pb
+  Algorithm: MES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one/poland_warszawa_2019_marysin-wawerski-polnocny.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cardinal/add-one/poland_warszawa_2019_marysin-wawerski-polnocny.csv
+
+Summary:
+  Highest efficiency: 0.8919
+  Projects selected: 9
+  Budget increases: 47

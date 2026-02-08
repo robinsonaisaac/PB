@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2017_ursus-poludniowy.pb
+Array task ID: 321
+slurmstepd: error: *** JOB 7614317 ON qnode3097 CANCELLED AT 2026-02-02T23:23:04 ***

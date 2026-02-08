@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_poznan_2023_2-kiekrz-krzyzowniki-smochowice-podolany-strzeszyn.pb
+Array task ID: 248
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_poznan_2023_2-kiekrz-krzyzowniki-smochowice-podolany-strzeszyn.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one/poland_poznan_2023_2-kiekrz-krzyzowniki-smochowice-podolany-strzeszyn.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one/poland_poznan_2023_2-kiekrz-krzyzowniki-smochowice-podolany-strzeszyn.csv
+
+Summary:
+  Highest efficiency: 0.6440
+  Projects selected: 3
+  Budget increases: 229

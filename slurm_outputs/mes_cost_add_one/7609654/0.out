@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/canada_stanford-dataset_pb-dieppe-2018_vote-approvals.pb
+Array task ID: 0
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/canada_stanford-dataset_pb-dieppe-2018_vote-approvals.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/canada_stanford-dataset_pb-dieppe-2018_vote-approvals.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/canada_stanford-dataset_pb-dieppe-2018_vote-approvals.csv
+
+Summary:
+  Highest efficiency: 0.9556
+  Projects selected: 7
+  Budget increases: 61

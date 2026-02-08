@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/France_Toulouse_2022_6_-_Saint-Cyprien.pb
+Array task ID: 17
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/France_Toulouse_2022_6_-_Saint-Cyprien.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/France_Toulouse_2022_6_-_Saint-Cyprien.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/France_Toulouse_2022_6_-_Saint-Cyprien.csv
+
+Summary:
+  Highest efficiency: 0.4725
+  Projects selected: 2
+  Budget increases: 0

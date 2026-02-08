@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/us_stanford-dataset_pb-cambridge-2016_vote-approvals.pb
+Array task ID: 694
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_pb-cambridge-2016_vote-approvals.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/us_stanford-dataset_pb-cambridge-2016_vote-approvals.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/none/us_stanford-dataset_pb-cambridge-2016_vote-approvals.csv
+
+Summary:
+  Highest efficiency: 0.7986
+  Projects selected: 9
+  Budget increases: 0

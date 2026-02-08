@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  none
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_lodz_2022_karolew-retkinia-wschod.pb
+Array task ID: 143
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2022_karolew-retkinia-wschod.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: none
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_lodz_2022_karolew-retkinia-wschod.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/PB_scripts/results/ees/cardinal/none/poland_lodz_2022_karolew-retkinia-wschod.csv
+
+Summary:
+  Highest efficiency: 0.3001
+  Projects selected: 12
+  Budget increases: 0

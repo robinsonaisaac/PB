@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2022_retkinia-zachod-smulsko.pb
+Array task ID: 156
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_lodz_2022_retkinia-zachod-smulsko.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_lodz_2022_retkinia-zachod-smulsko.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt_exhaustive/poland_lodz_2022_retkinia-zachod-smulsko.csv
+
+Summary:
+  Highest efficiency: 0.6983
+  Projects selected: 9
+  Budget increases: 572

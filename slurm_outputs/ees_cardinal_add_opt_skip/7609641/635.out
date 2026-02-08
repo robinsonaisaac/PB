@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2026_olszynka-grochowska-goclawek.pb
+Array task ID: 635
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2026_olszynka-grochowska-goclawek.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip/poland_warszawa_2026_olszynka-grochowska-goclawek.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-opt-skip/poland_warszawa_2026_olszynka-grochowska-goclawek.csv
+
+Summary:
+  Highest efficiency: 0.5888
+  Projects selected: 4
+  Budget increases: 2

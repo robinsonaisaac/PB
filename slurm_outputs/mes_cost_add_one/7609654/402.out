@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   mes
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2018_targowek-fabryczny-elsnerow-i-utrata.pb
+Array task ID: 402
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_targowek-fabryczny-elsnerow-i-utrata.pb
+  Algorithm: MES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/poland_warszawa_2018_targowek-fabryczny-elsnerow-i-utrata.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/mes/cost/add-one/poland_warszawa_2018_targowek-fabryczny-elsnerow-i-utrata.csv
+
+Summary:
+  Highest efficiency: 0.8749
+  Projects selected: 11
+  Budget increases: 56

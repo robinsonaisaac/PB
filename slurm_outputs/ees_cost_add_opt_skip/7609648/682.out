@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-opt-skip
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/us_stanford-dataset_2022-jersey-city-ward-c_vote-knapsacks.pb
+Array task ID: 682
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_2022-jersey-city-ward-c_vote-knapsacks.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-opt-skip
+  Exhaustive: False
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/us_stanford-dataset_2022-jersey-city-ward-c_vote-knapsacks.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-opt-skip/us_stanford-dataset_2022-jersey-city-ward-c_vote-knapsacks.csv
+
+Summary:
+  Highest efficiency: 1.0000
+  Projects selected: 1
+  Budget increases: 2

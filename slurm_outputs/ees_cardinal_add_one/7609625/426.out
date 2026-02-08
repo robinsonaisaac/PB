@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  no
+==============================================
+Running on file: ../Data/poland_warszawa_2019_goclaw.pb
+Array task ID: 426
+slurmstepd: error: *** JOB 7613369 ON qnode3097 CANCELLED AT 2026-02-02T23:18:59 ***

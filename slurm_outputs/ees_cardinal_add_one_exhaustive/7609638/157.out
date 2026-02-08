@@ -1,0 +1,10 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_lodz_2022_rokicie.pb
+Array task ID: 157
+slurmstepd: error: *** JOB 7614153 ON qnode1242 CANCELLED AT 2026-02-02T23:23:04 ***

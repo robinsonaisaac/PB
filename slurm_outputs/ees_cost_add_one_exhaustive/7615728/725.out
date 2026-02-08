@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cost
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/us_stanford-dataset_pb-chicago-49th-ward-2015_vote-approvals.pb
+Array task ID: 725
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/us_stanford-dataset_pb-chicago-49th-ward-2015_vote-approvals.pb
+  Algorithm: EES
+  Utility: cost
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/us_stanford-dataset_pb-chicago-49th-ward-2015_vote-approvals.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cost/add-one_exhaustive/us_stanford-dataset_pb-chicago-49th-ward-2015_vote-approvals.csv
+
+Summary:
+  Highest efficiency: 0.5217
+  Projects selected: 8
+  Budget increases: 136

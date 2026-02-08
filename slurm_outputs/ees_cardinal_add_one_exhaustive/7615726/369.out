@@ -1,0 +1,23 @@
+==============================================
+Submitting PB jobs with configuration:
+  Algorithm:   ees
+  Utility:     cardinal
+  Completion:  add-one
+  Exhaustive:  --exhaustive
+==============================================
+Running on file: ../Data/poland_warszawa_2018_obszar-1-plac-wojska-polskiego-wola-grzybowska-centrum-groszowka-grzybowa-zielona.pb
+Array task ID: 369
+Running PB algorithm:
+  Input: /gpfs/home/uki2551/EES_Project/PB/Data/poland_warszawa_2018_obszar-1-plac-wojska-polskiego-wola-grzybowska-centrum-groszowka-grzybowa-zielona.pb
+  Algorithm: EES
+  Utility: cardinal
+  Completion: add-one
+  Exhaustive: True
+  Output: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_warszawa_2018_obszar-1-plac-wojska-polskiego-wola-grzybowska-centrum-groszowka-grzybowa-zielona.csv
+
+Results saved to: /gpfs/home/uki2551/EES_Project/PB/results/ees/cardinal/add-one_exhaustive/poland_warszawa_2018_obszar-1-plac-wojska-polskiego-wola-grzybowska-centrum-groszowka-grzybowa-zielona.csv
+
+Summary:
+  Highest efficiency: 0.4241
+  Projects selected: 7
+  Budget increases: 426
