@@ -4,8 +4,7 @@ Defines colors, fonts, figure sizes to match the paper's figures.
 """
 
 import matplotlib.pyplot as plt
-import matplotlib as mpl
-from typing import List, Dict, Optional
+from typing import List, Dict
 import numpy as np
 
 # Color scheme matching the paper

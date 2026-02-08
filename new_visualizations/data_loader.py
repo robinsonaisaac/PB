@@ -5,12 +5,33 @@ Data loading functions for participatory budgeting results.
 import os
 import csv
 from pathlib import Path
-from typing import Dict, List, Optional, Union
+from typing import Dict
 import pandas as pd
 
-from .utils import (
-    extract_instance_info,
-)
+
+def extract_instance_info(filename: str) -> Dict[str, str]:
+    """
+    Extract location and year information from filename.
+
+    Args:
+        filename: Filename like "poland_lodz_2020_andrzejow.csv"
+
+    Returns:
+        Dictionary with country, city, year, district
+    """
+    # Remove .csv extension
+    name = filename.replace('.csv', '')
+
+    parts = name.split('_')
+
+    result = {
+        'country': parts[0] if len(parts) > 0 else '',
+        'city': parts[1] if len(parts) > 1 else '',
+        'year': parts[2] if len(parts) > 2 else '',
+        'district': '_'.join(parts[3:]) if len(parts) > 3 else ''
+    }
+
+    return result
 
 
 def load_single_result(csv_path: str) -> Dict:
@@ -31,7 +52,7 @@ def load_single_result(csv_path: str) -> Dict:
     """
     result = {
         'filepath': csv_path,
-        'filename': os.path.basename(csv_path),
+        'election_name': os.path.splitext(os.path.basename(csv_path))[0],
         'instance_info': extract_instance_info(os.path.basename(csv_path))
     }
 
@@ -177,44 +198,5 @@ def load_all_results(results_root: str) -> Dict[str, Dict]:
                     results[method][utility][variant] = load_results_folder(str(folder_path))
                 else:
                     results[method][utility][variant] = pd.DataFrame()
-
-    return results
-
-
-    """
-    Load results from the new unified CLI structure into a flat dictionary.
-
-    Args:
-        results_root: Path to the results/ folder
-
-    Returns:
-        Dictionary mapping configuration strings to DataFrames:
-        {
-            'ees_cardinal_add-opt': DataFrame,
-            'ees_cardinal_add-opt_exhaustive': DataFrame,
-            'mes_cost_add-one': DataFrame,
-            ...
-        }
-    """
-    results = {}
-    root = Path(results_root)
-
-    algorithms = ['ees', 'mes']
-    utilities = ['cardinal', 'cost']
-    ees_completions = ['none', 'add-one', 'add-opt', 'add-opt-skip',
-                       'add-one_exhaustive', 'add-opt_exhaustive', 'add-opt-skip_exhaustive']
-    mes_completions = ['none', 'add-one', 'add-one_exhaustive']
-
-    for alg in algorithms:
-        completions = ees_completions if alg == 'ees' else mes_completions
-        for util in utilities:
-            for variant in completions:
-                folder_path = root / alg / util / variant
-                key = f"{alg}_{util}_{variant}"
-
-                if folder_path.exists():
-                    results[key] = load_results_folder(str(folder_path))
-                else:
-                    results[key] = pd.DataFrame()
 
     return results
