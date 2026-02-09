@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 PAPER_COLORS = {
     'scatter': 'blue',
-    'diagonal': 'grey'
+    'diagonal': 'red'
 }
 
 FIGURE_SIZES = {
