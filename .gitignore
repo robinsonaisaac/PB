@@ -24,3 +24,5 @@ all_pb_files_*/
 *.egg-info/
 
 Data/*.pb
+
+new_visualizations/data.pkl
