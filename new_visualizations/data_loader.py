@@ -4,11 +4,23 @@ Data loading functions for participatory budgeting results.
 
 import os
 import csv
+import re
 from pathlib import Path
 from typing import Dict
 import pandas as pd
 import sys
+import ast
+from fractions import Fraction
 csv.field_size_limit(sys.maxsize)
+
+
+def _replace_fractions(s: str) -> str:
+    """Replace Fraction(num, den) with float string so ast.literal_eval can parse it."""
+    return re.sub(
+        r'Fraction\((\-?\d+),\s*(\-?\d+)\)',
+        lambda m: str(float(Fraction(int(m.group(1)), int(m.group(2))))),
+        s,
+    )
 
 
 def extract_instance_info(filename: str) -> Dict[str, str]:
@@ -69,7 +81,6 @@ def load_single_result(csv_path: str) -> Dict:
             if 'most_efficient_project_set' in row and row['most_efficient_project_set']:
                 try:
                     # Parse as Python list from string representation
-                    import ast
                     result['most_efficient_project_set'] = ast.literal_eval(row['most_efficient_project_set'])
                 except (ValueError, SyntaxError):
                     result['most_efficient_project_set'] = []
@@ -81,31 +92,14 @@ def load_single_result(csv_path: str) -> Dict:
                 except (ValueError, TypeError):
                     pass
 
-            # Extract budget increase list (list of numbers/fractions)
-            if 'budget_increase_list' in row and row['budget_increase_list']:
-                try:
-                    import ast
-                    # Parse the list representation, then convert Fraction strings to floats
-                    budget_list_raw = ast.literal_eval(row['budget_increase_list'])
-                    budget_list = []
-                    for item in budget_list_raw:
-                        if isinstance(item, str) and 'Fraction' in item:
-                            # Parse Fraction objects
-                            from fractions import Fraction
-                            frac = Fraction(item.split('Fraction(')[1].split(')')[0])
-                            budget_list.append(float(frac))
-                        else:
-                            budget_list.append(float(item))
-                    result['budget_increase_list'] = budget_list
-                    result['budget_increase_count'] = len(budget_list)
-                except (ValueError, TypeError, IndexError):
-                    result['budget_increase_list'] = []
-                    result['budget_increase_count'] = 0
+            cleaned = _replace_fractions(row['budget_increase_list'])
+            budget_list = [float(x) for x in ast.literal_eval(cleaned)]
+            result['budget_increase_list'] = budget_list
+            result['budget_increase_count'] = len(budget_list)
 
             # Extract efficiency list (list of floats)
             if 'efficiency_list' in row and row['efficiency_list']:
                 try:
-                    import ast
                     eff_list = ast.literal_eval(row['efficiency_list'])
                     # Convert to floats if needed
                     result['efficiency_list'] = [float(e) for e in eff_list]

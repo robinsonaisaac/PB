@@ -15,12 +15,11 @@ FIGURE_SIZES = {
 }
 
 FONT_SIZES = {
-    'title': 12,
-    'axis_label': 10,
-    'tick_label': 9,
-    'legend': 9,
-    'annotation': 9,
-    'percentage_box': 10,
+    'axis_label': 12,
+    'tick_label': 10,
+    'legend': 12,
+    'annotation': 12,
+    'percentage_box': 12,
 }
 
 LINE_STYLES = {
