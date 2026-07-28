@@ -3,6 +3,8 @@ import pandas as pd
 from plot_functions import comparison_scatter_plot
 import matplotlib.pyplot as plt
 import math
+import numpy as np
+from statistics import median
 
 # Add src to path for scalable_proportional_pb
 import sys
@@ -79,8 +81,11 @@ def median_cost_of_projects(result_df):
   def get_median_cost(row):
     election = row['election']
     project_set = row['most_efficient_project_set']
-    costs = [election.projects[p].cost for p in project_set]
-    return pd.Series(costs).median()
+    if len(project_set) == 0:
+      return 0
+    else:
+      costs = [election.projects[p].cost for p in project_set]
+      return median(costs)
 
   result_df['median_cost_of_projects'] = result_df.apply(get_median_cost, axis=1)
   return result_df
@@ -111,7 +116,7 @@ def voter_utilities(result_df, utility):
   result_df[col_name] = result_df.apply(get_voter_utilities, axis=1)
   return result_df
 
-def gini_index(result_df, utility):
+def inverted_gini_index(result_df, utility):
   """
   Adds a column that contains the gini index for the voters based on their utility (cardinal or cost) for the highest efficiency outcome.
   
@@ -119,19 +124,20 @@ def gini_index(result_df, utility):
   'voter_utilities_{utility}' from the voter_utilities function
   :param utility: Utility to use for calculating gini index. Either 'cost' or 'cardinal'
   """
-  def compute_gini(utilities_list):
-    """Compute the Gini index for a list of utilities."""
-    n = len(utilities_list)
-    mean_utility = sum(utilities_list) / n
-
-    # Calculate gini as (average variance) / (2*mean)
-    abs_diffs = sum(abs(u_i - u_j) for u_i in utilities_list for u_j in utilities_list)
-    gini = abs_diffs / (2 * n * n * mean_utility)
-    return gini
+  def compute_inverted_gini(utilities_list):
+    # The rest of the code requires numpy arrays.
+    x = np.asarray(utilities_list)
+    sorted_x = np.sort(x)
+    n = len(x)
+    cumx = np.cumsum(sorted_x, dtype=float)
+    if cumx[-1] == 0:
+      return 1
+    else:
+      return 1- ((n + 1 - 2 * np.sum(cumx) / cumx[-1]) / n)
 
   col_name = f'voter_utilities_{utility}'
-  gini_col_name = f'gini_index_{utility}'
-  result_df[gini_col_name] = result_df[col_name].apply(compute_gini)
+  gini_col_name = f'inverted_gini_index_{utility}'
+  result_df[gini_col_name] = result_df[col_name].apply(compute_inverted_gini)
   return result_df
 
 def log_nash_welfare(result_df, utility):
@@ -154,6 +160,41 @@ def log_nash_welfare(result_df, utility):
   col_name = f'voter_utilities_{utility}'
   nash_col_name = f'log_nash_welfare_{utility}'
   result_df[nash_col_name] = result_df[col_name].apply(compute_log_nash_welfare)
+  return result_df
+
+def log_positive_nash_welfare(result_df, utility):
+  """
+  Adds a column that contains the log of the Nash welfare using only voters with nonzero utility.
+
+  :param result_df: Dataframe containing results as loaded by the data_loader file, and containing column
+  'voter_utilities_{utility}' from the voter_utilities function
+  :param utility: Utility to use for calculating Nash welfare. Either 'cost' or 'cardinal'
+  """
+  def compute_log_positive_nash_welfare(utilities_list):
+    positive_utilities = [u for u in utilities_list if u > 0]
+    if not positive_utilities:
+      return 0.0
+    return sum(math.log(u) for u in positive_utilities)
+
+  col_name = f'voter_utilities_{utility}'
+  nash_col_name = f'log_positive_nash_welfare_{utility}'
+  result_df[nash_col_name] = result_df[col_name].apply(compute_log_positive_nash_welfare)
+  return result_df
+
+def zero_utility_count(result_df, utility):
+  """
+  Adds a column that contains the number of voters with zero utility.
+
+  :param result_df: Dataframe containing results as loaded by the data_loader file, and containing column
+  'voter_utilities_{utility}' from the voter_utilities function
+  :param utility: Utility to use for calculating the count. Either 'cost' or 'cardinal'
+  """
+  def count_zero_utilities(utilities_list):
+    return sum(1 for utility_value in utilities_list if utility_value == 0)
+
+  col_name = f'voter_utilities_{utility}'
+  zero_count_col_name = f'zero_utility_count_{utility}'
+  result_df[zero_count_col_name] = result_df[col_name].apply(count_zero_utilities)
   return result_df
 
 def runtime(result_df):
