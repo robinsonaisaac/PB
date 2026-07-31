@@ -162,26 +162,6 @@ def add_percentage_legend(ax: plt.Axes, percentages: Dict[str, float],
             fontsize=FONT_SIZES['percentage_box'],
             verticalalignment='top', bbox=props)
 
-
-def add_100_percent_line(ax: plt.Axes, orientation: str = 'horizontal',
-                          value: float = 1.0, label: str = '100% SE') -> None:
-    """
-    Add a 100% spending efficiency reference line.
-
-    Args:
-        ax: Matplotlib axis object
-        orientation: 'horizontal' or 'vertical'
-        value: Value at which to draw the line
-        label: Label for the line
-    """
-    color = PAPER_COLORS['reference_line']
-
-    if orientation == 'horizontal':
-        ax.axhline(y=value, color=color, linestyle='--', alpha=0.7, label=label)
-    else:
-        ax.axvline(x=value, color=color, linestyle='--', alpha=0.7, label=label)
-
-
 def create_figure_with_subplots(nrows: int, ncols: int,
                                   figsize: tuple = None,
                                   **kwargs) -> tuple:

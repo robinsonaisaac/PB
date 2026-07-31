@@ -4,14 +4,20 @@ Defines colors, fonts, figure sizes for the paper
 """
 
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 PAPER_COLORS = {
     'scatter': 'blue',
-    'diagonal': 'red'
+    'diagonal': 'red',
+    'method': 'orange',
+    'efficiency_line': 'cornflowerblue',
+    'reference_line': 'red',
+    'project_palette': sns.color_palette("gist_earth")[::-1]
 }
 
 FIGURE_SIZES = {
     'scatter': (6, 5),
+    'trajectory': (12, 5),         # Efficiency + project selection
 }
 
 FONT_SIZES = {
@@ -20,6 +26,7 @@ FONT_SIZES = {
     'legend': 12,
     'annotation': 12,
     'percentage_box': 12,
+    'title': 14
 }
 
 LINE_STYLES = {
@@ -33,6 +40,23 @@ MARKER_STYLES = {
     'scatter_alpha': 0.6,
 }
 
+def get_project_colors(project_names):
+    """
+    Generate consistent colors for project names.
+
+    Args:
+        project_names: List of project names/IDs
+
+    Returns:
+        Dictionary mapping project names to colors
+    """
+    colors = {}
+    palette = PAPER_COLORS['project_palette']
+
+    for i, name in enumerate(project_names):
+        colors[name] = palette[i % len(palette)]
+
+    return colors
 
 def apply_paper_style(ax: plt.Axes, title: str = None,
                        xlabel: str = None, ylabel: str = None) -> None:
